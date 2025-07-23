@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { DotBackground } from "@/ui/DotBackground";
+import { HomeButtonGithub } from "@/app/components/HomeButtonGithub";
+import { HomeButtonLearnMore } from "@/app/components/HomeButtonLearnMore";
 
 export default function Page() {
     return (
@@ -32,29 +34,17 @@ export default function Page() {
                     {/*buttons*/}
                     <div className="mt-8 flex flex-row items-center">
                         {/*github*/}
-                        <button className="flex items-center gap-2 rounded-xl bg-black px-6 py-3 text-white transition duration-500 hover:scale-110 hover:cursor-pointer">
-                            <Image
-                                src="/icons/github.svg"
-                                alt="GitHub"
-                                width={24}
-                                height={24}
-                            />
-                            <span className="font-bold tracking-wide">
-                                GitHub
-                            </span>
-                        </button>
+                        <HomeButtonGithub />
 
                         {/*learn more*/}
-                        <button className="ml-4 flex items-center gap-2 rounded-xl border-1 border-black px-6 py-3 font-bold tracking-wide text-black transition duration-500 hover:scale-110 hover:cursor-pointer">
-                            Learn More
-                        </button>
+                        <HomeButtonLearnMore />
                     </div>
                 </div>
 
                 {/*scroll*/}
                 <div className="absolute flex h-screen w-screen flex-col-reverse items-center pb-8">
                     <div className="flex flex-row items-center">
-                        <div className="tracking-widest">Scroll</div>
+                        <div className="font-bold tracking-widest">Scroll</div>
                         <div className="ml-2 flex size-8 items-center justify-center rounded-full bg-black">
                             <Image
                                 className="mb-1"
