@@ -29,16 +29,26 @@ export default function Page() {
                         Tools, Services & Applications
                     </div>
 
-                    {/*button GitHub*/}
-                    <button className="mt-8 flex items-center gap-2 rounded-xl bg-black px-6 py-3 text-white transition duration-500 hover:scale-110 hover:cursor-pointer">
-                        <Image
-                            src="/icons/github.svg"
-                            alt="GitHub"
-                            width={24}
-                            height={24}
-                        />
-                        <span className="font-bold tracking-wide">GitHub</span>
-                    </button>
+                    {/*buttons*/}
+                    <div className="mt-8 flex flex-row items-center">
+                        {/*github*/}
+                        <button className="flex items-center gap-2 rounded-xl bg-black px-6 py-3 text-white transition duration-500 hover:scale-110 hover:cursor-pointer">
+                            <Image
+                                src="/icons/github.svg"
+                                alt="GitHub"
+                                width={24}
+                                height={24}
+                            />
+                            <span className="font-bold tracking-wide">
+                                GitHub
+                            </span>
+                        </button>
+
+                        {/*learn more*/}
+                        <button className="ml-4 flex items-center gap-2 rounded-xl border-1 border-black px-6 py-3 font-bold tracking-wide text-black transition duration-500 hover:scale-110 hover:cursor-pointer">
+                            Learn More
+                        </button>
+                    </div>
                 </div>
 
                 {/*scroll*/}
