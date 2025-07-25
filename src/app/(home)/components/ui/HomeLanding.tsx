@@ -1,7 +1,7 @@
 import { DotBackground } from "@/ui/DotBackground";
-import { HomeButtonGithub } from "@/app/components/HomeButtonGithub";
-import { HomeButtonLearnMore } from "@/app/components/HomeButtonLearnMore";
-import HomeScroll from "@/app/components/ui/HomeScroll";
+import { HomeButtonGithub } from "@/app/(home)/components/HomeButtonGithub";
+import { HomeButtonLearnMore } from "@/app/(home)/components/HomeButtonLearnMore";
+import HomeScroll from "@/app/(home)/components/ui/HomeScroll";
 
 export default function HomeLanding() {
     return (

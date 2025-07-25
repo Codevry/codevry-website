@@ -1,6 +1,6 @@
-import HomeLanding from "@/app/components/ui/HomeLanding";
-import HomeTools from "@/app/components/ui/HomeTools";
-import HomeIcons from "@/app/components/ui/HomeIcons";
+import HomeLanding from "@/app/(home)/components/ui/HomeLanding";
+import HomeTools from "@/app/(home)/components/ui/HomeTools";
+import HomeIcons from "@/app/(home)/components/ui/HomeIcons";
 
 export default function Page() {
     return (
