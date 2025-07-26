@@ -1,6 +1,9 @@
 import { TypeProject } from "@/types/TypeProject";
 import Image from "next/image";
 import { MIconButton } from "@/ui/button/MIconButton";
+import IconGithub from "@/icons/github.svg";
+import IconWeb from "@/icons/web.svg";
+import ChipLanguage from "@/ui/chips/ChipLanguage";
 
 export default function HomeContainerProject({
     project,
@@ -28,24 +31,39 @@ export default function HomeContainerProject({
                 </div>
 
                 {/*links & lang*/}
-                <div className="mt-4 flex flex-row">
+                <div className="mt-4 flex flex-row items-center">
                     {/*links*/}
+                    <div className={"flex flex-row"}>
+                        {/*github*/}
+                        <MIconButton
+                            link={project.github}
+                            color="fill-zinc-300"
+                            hoverColor="fill-black"
+                        >
+                            <IconGithub className="size-8" />
+                        </MIconButton>
 
-                    {/*github*/}
-                    <MIconButton
-                        icon="/icons/github-zinc.svg"
-                        link={project.github}
-                        className="size-6 hover:scale-125"
+                        {/*website*/}
+                        {project.website && (
+                            <MIconButton
+                                link={project.website}
+                                color="fill-zinc-300"
+                                hoverColor="fill-black"
+                                className={"ml-4"}
+                            >
+                                <IconWeb className="size-8" />
+                            </MIconButton>
+                        )}
+                    </div>
+
+                    <div
+                        className={"mx-8 h-6 w-[2px] rounded-full bg-zinc-300"}
                     />
 
-                    {/*website*/}
-                    {project.website && (
-                        <MIconButton
-                            icon="/icons/web-zinc.svg"
-                            link={project.website}
-                            className="ml-4 size-6 hover:scale-125"
-                        />
-                    )}
+                    {/*language*/}
+                    {project.languages.map((lang) => (
+                        <ChipLanguage key={lang.name} lang={lang} />
+                    ))}
                 </div>
             </div>
         </div>
