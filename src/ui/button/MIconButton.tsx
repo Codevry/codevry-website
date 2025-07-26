@@ -1,34 +1,42 @@
 "use client";
 
+import { router } from "next/client";
+import React from "react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 interface ButtonProps {
-    className?: string;
-    icon: string;
+    children: React.ReactElement;
+    color: string;
+    hoverColor: string;
     link?: string;
     route?: string;
 }
 
-export function MIconButton({ className, icon, link, route }: ButtonProps) {
+export function MIconButton({
+    children,
+    link,
+    route,
+    color,
+    hoverColor,
+}: ButtonProps) {
     /**
-     * GitHub open tab
+     * open a link or navigate
      */
     function open() {
         if (link) window.open(link, "_blank");
+        else if (route) router.push(route).then();
     }
 
     return (
-        <Image
-            src={icon}
-            alt=""
-            width={24}
-            height={24}
+        <div
             onClick={open}
             className={cn(
-                "transition duration-500 hover:scale-110 hover:cursor-pointer",
-                className
+                color,
+                `hover:${hoverColor} hover:scale-125`,
+                "transition duration-500"
             )}
-        />
+        >
+            {children}
+        </div>
     );
 }
