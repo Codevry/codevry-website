@@ -10,6 +10,7 @@ interface ButtonProps {
     hoverColor: string;
     link?: string;
     route?: string;
+    className?: string;
 }
 
 export function MIconButton({
@@ -18,6 +19,7 @@ export function MIconButton({
     route,
     color,
     hoverColor,
+    className,
 }: ButtonProps) {
     /**
      * open a link or navigate
@@ -33,7 +35,8 @@ export function MIconButton({
             className={cn(
                 color,
                 `hover:${hoverColor} hover:scale-125`,
-                "transition duration-500"
+                "transition duration-500",
+                className
             )}
         >
             {children}
