@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -24,12 +23,7 @@ export default function HomeScroll() {
     return (
         <div>
             {isVisible && (
-                <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0 }}
-                    className="absolute flex h-screen w-screen flex-col-reverse items-center pb-8"
-                >
+                <div className="absolute flex h-screen w-screen flex-col-reverse items-center pb-8">
                     <div className="flex flex-row items-center">
                         <div className="font-bold tracking-widest">Scroll</div>
                         <div className="ml-2 flex size-8 items-center justify-center rounded-full bg-black">
@@ -42,7 +36,7 @@ export default function HomeScroll() {
                             />
                         </div>
                     </div>
-                </motion.div>
+                </div>
             )}
         </div>
     );
