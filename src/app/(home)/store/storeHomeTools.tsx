@@ -8,12 +8,37 @@ type TypeStore = {
 const useStoreHomeTools = create<TypeStore>(() => ({
     projects: [
         {
-            title: "Project 1",
-            description: "Project 1 description",
+            title: "Restmap",
+            description:
+                "Simple way to query only the required data from a Rest API without relying on lot of external tools or code",
             icon: "restmap.svg",
-            github: "https://github.com",
-            website: "https://google.com",
-            languages: [],
+            github: "https://github.com/restmap/restmap-node",
+            languages: [
+                {
+                    name: "Typescript",
+                    bgColor: "bg-sky-600",
+                    textColor: "text-black",
+                },
+                {
+                    name: "Javascript",
+                    bgColor: "bg-yellow-300",
+                    textColor: "text-black",
+                },
+            ],
+        },
+        {
+            title: "JSON Keys Sort",
+            description:
+                "Sorting a json object based on keys either ascending or descending & even recursively",
+            icon: "code-json.svg",
+            github: "https://github.com/DawnImpulse/json-keys-sort",
+            languages: [
+                {
+                    name: "Javascript",
+                    bgColor: "bg-yellow-300",
+                    textColor: "text-black",
+                },
+            ],
         },
     ],
 }));
