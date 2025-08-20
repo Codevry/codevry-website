@@ -26,7 +26,7 @@ export default function HomeContainerProject({
                 <div className="text-2xl font-bold">{project.title}</div>
 
                 {/*description*/}
-                <div className="mt-2 text-lg text-zinc-400">
+                <div className="mt-1 text-lg text-zinc-400">
                     {project.description}
                 </div>
 
