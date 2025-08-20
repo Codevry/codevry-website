@@ -17,7 +17,7 @@ const useStoreHomeTools = create<TypeStore>(() => ({
                 {
                     name: "Typescript",
                     bgColor: "bg-sky-600",
-                    textColor: "text-black",
+                    textColor: "text-white",
                 },
                 {
                     name: "Javascript",
