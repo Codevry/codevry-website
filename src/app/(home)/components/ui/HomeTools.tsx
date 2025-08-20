@@ -5,7 +5,7 @@ export default function HomeTools() {
         <div className="mt-24 flex w-screen justify-center px-24">
             <div className="flex w-full flex-col lg:w-8/10">
                 {/*heading*/}
-                <div className="w-full pr-4 text-end text-6xl font-semibold tracking-widest">
+                <div className="font-montserrat w-full pr-4 text-6xl tracking-widest">
                     TOOLS
                 </div>
 
@@ -13,7 +13,7 @@ export default function HomeTools() {
                 <div className="mt-4 h-[0.5px] w-full bg-neutral-300" />
 
                 {/*projects*/}
-                <div className="mt-24"></div>
+                <div className="mt-8"></div>
                 <HomeToolsProjects />
             </div>
         </div>
