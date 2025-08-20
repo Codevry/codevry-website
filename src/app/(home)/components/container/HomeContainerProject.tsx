@@ -11,7 +11,7 @@ export default function HomeContainerProject({
     project: TypeProject;
 }) {
     return (
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-start py-8">
             {/*icon*/}
             <Image
                 src={`/icons/${project.icon}`}
