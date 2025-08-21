@@ -2,6 +2,7 @@ import HomeLanding from "@/app/(home)/components/ui/HomeLanding";
 import HomeTools from "@/app/(home)/components/ui/HomeTools";
 import HomeIcons from "@/app/(home)/components/ui/HomeIcons";
 import HomeServices from "@/app/(home)/components/ui/HomeServices";
+import HomeFooter from "@/app/(home)/components/ui/HomeFooter";
 
 export default function Page() {
     return (
@@ -10,6 +11,7 @@ export default function Page() {
             <HomeIcons />
             <HomeTools />
             <HomeServices />
+            <HomeFooter />
         </div>
     );
 }
