@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.2](https://github.com/codevry/codevry-website/compare/v0.1.1...v0.1.2) (2025-08-21)
+
+
+### Features
+
+* **functions:** vercel base url ([22c5ef1](https://github.com/codevry/codevry-website/commit/22c5ef19eec3be4f6c4f1d5756276d4dbf2434e0))
+
+
+### Bug Fixes
+
+* **app:** remove favicon ([d096003](https://github.com/codevry/codevry-website/commit/d0960036da07b821f67c5e2129ff4324b622bd24))
+* **home:** container - icons ([10a2c50](https://github.com/codevry/codevry-website/commit/10a2c505708b49ceb331167e533b965ea2077df5))
+* **layout:** metadata ([2aed426](https://github.com/codevry/codevry-website/commit/2aed4265bc1916cf00cca01b270faac3998738ea))
+
 ## 0.1.1 (2025-08-21)
 
 
