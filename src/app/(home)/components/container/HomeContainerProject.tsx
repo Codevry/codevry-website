@@ -1,8 +1,6 @@
 import { TypeProject } from "@/types/TypeProject";
 import Image from "next/image";
 import { MIconButton } from "@/ui/button/MIconButton";
-import IconGithub from "@/icons/github.svg";
-import IconWeb from "@/icons/web.svg";
 import ChipLanguage from "@/ui/chips/ChipLanguage";
 
 export default function HomeContainerProject({
@@ -41,7 +39,13 @@ export default function HomeContainerProject({
                             color="fill-zinc-300"
                             hoverColor="fill-black"
                         >
-                            <IconGithub className="size-8" />
+                            <Image
+                                src={"/icons/github-zinc.svg"}
+                                alt={""}
+                                width={32}
+                                height={32}
+                                className="size-8"
+                            />
                         </MIconButton>
 
                         {/*website*/}
@@ -52,7 +56,13 @@ export default function HomeContainerProject({
                                 hoverColor="fill-black"
                                 className={"ml-4"}
                             >
-                                <IconWeb className="size-8" />
+                                <Image
+                                    src={"/icons/web-zinc.svg"}
+                                    alt={""}
+                                    width={32}
+                                    height={32}
+                                    className="size-8"
+                                />
                             </MIconButton>
                         )}
                     </div>
