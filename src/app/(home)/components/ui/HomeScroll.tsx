@@ -24,7 +24,7 @@ export default function HomeScroll() {
         <div>
             {isVisible && (
                 <div className="absolute flex h-screen w-screen flex-col-reverse items-center pb-8">
-                    <div className="flex flex-row items-center">
+                    <div className="motion-preset-oscillate motion-duration-1500 flex flex-row items-center">
                         <div className="font-bold tracking-widest">Scroll</div>
                         <div className="ml-2 flex size-8 items-center justify-center rounded-full bg-black">
                             <Image
