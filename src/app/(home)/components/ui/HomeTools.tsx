@@ -5,7 +5,7 @@ export default function HomeTools() {
         <div className="mt-24 flex w-screen justify-center px-24">
             <div className="flex w-full flex-col lg:w-8/10">
                 {/*heading*/}
-                <div className="font-montserrat w-full rounded-2xl bg-gradient-to-r from-rose-400 to-transparent py-6 pr-4 pl-16 text-5xl tracking-widest">
+                <div className="font-montserrat w-fit rounded-2xl bg-gradient-to-r from-rose-400 to-transparent px-16 py-6 text-5xl tracking-widest">
                     TOOLS
                 </div>
 
