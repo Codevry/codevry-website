@@ -12,7 +12,7 @@ export default function HomeFooter({ className }: HomeFooterProps) {
         <div className={twMerge("flex w-screen justify-center", className)}>
             <div
                 className={
-                    "mt-24 mb-8 flex flex-row items-center justify-around rounded-2xl bg-black py-6 text-white lg:w-8/12"
+                    "mx-4 mt-24 mb-8 flex w-full flex-col items-center justify-around gap-8 rounded-2xl bg-black py-6 text-white md:flex-row md:gap-0 lg:w-8/12"
                 }
             >
                 <div>Codevry</div>
