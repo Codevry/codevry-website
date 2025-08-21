@@ -35,7 +35,7 @@ export default function HomeIcons() {
 
     return (
         <div className="flex w-screen justify-center">
-            <div className="flex flex-row justify-between opacity-10 lg:w-8/12">
+            <div className="flex w-full flex-row justify-between opacity-10 md:w-10/12 lg:w-8/12">
                 {icons.map((icon, index) => (
                     <div
                         key={index}
@@ -43,6 +43,7 @@ export default function HomeIcons() {
                     >
                         <Image
                             src={`/icons/${icon}`}
+                            className={"size-12 lg:size-16"}
                             alt={icon.replace(".svg", "")}
                             width={64}
                             height={64}
