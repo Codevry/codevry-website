@@ -11,8 +11,21 @@ const useStoreHomeServices = create<TypeStore>(() => ({
             title: "Foundation",
             description:
                 "Simple Rate limiting & Authentication gateway service for your APIs",
-            icon: "restmap.svg",
+            icon: "api.svg",
             github: "https://github.com/Codevry/foundation",
+            languages: [
+                {
+                    name: "Typescript",
+                    bgColor: "bg-sky-600",
+                    textColor: "text-white",
+                },
+            ],
+        },
+        {
+            title: "Horm",
+            description: "Html form saving backend service",
+            icon: "list-box.svg",
+            github: "https://github.com/Codevry/horm",
             languages: [
                 {
                     name: "Typescript",
