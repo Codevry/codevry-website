@@ -8,7 +8,7 @@ export function HomeButtonGithub() {
      * GitHub open tab
      */
     function githubOpen() {
-        window.open("https://github.com/codevry", "_blank");
+        window.open("https://github.com/orgs/codevry/repositories", "_blank");
     }
 
     return (
