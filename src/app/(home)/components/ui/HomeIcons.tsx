@@ -15,13 +15,31 @@ export default function HomeIcons() {
         setIcons(iconsList);
     }, []);
 
+    /**
+     * return motion class
+     */
+    function motion(index: number): string {
+        switch (index) {
+            case 0:
+                return "motion-preset-stretch";
+            case 1:
+                return "motion-preset-seesaw motion-duration-300";
+            case 2:
+                return "motion-preset-pulse motion-duration-2000";
+            case 3:
+                return "motion-preset-oscillate motion-duration-2000";
+            default:
+                return "";
+        }
+    }
+
     return (
         <div className="flex w-screen justify-center">
             <div className="flex flex-row justify-between opacity-10 lg:w-8/12">
                 {icons.map((icon, index) => (
                     <div
                         key={index}
-                        className="flex items-center justify-center p-4"
+                        className={`${motion(index)} flex items-center justify-center p-4`}
                     >
                         <Image
                             src={`/icons/${icon}`}
