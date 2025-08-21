@@ -15,6 +15,7 @@ export default function HomeContainerProject({
             {/*icon*/}
             <Image
                 src={`/icons/${project.icon}`}
+                className={"size-8 lg:size-10"}
                 alt=""
                 width={36}
                 height={36}
@@ -60,10 +61,12 @@ export default function HomeContainerProject({
                         className={"mx-8 h-6 w-[2px] rounded-full bg-zinc-300"}
                     />
 
-                    {/*language*/}
-                    {project.languages.map((lang) => (
-                        <ChipLanguage key={lang.name} lang={lang} />
-                    ))}
+                    <div className={"flex flex-col gap-2 lg:flex-row"}>
+                        {/*language*/}
+                        {project.languages.map((lang) => (
+                            <ChipLanguage key={lang.name} lang={lang} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
