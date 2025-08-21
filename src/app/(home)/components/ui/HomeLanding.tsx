@@ -2,6 +2,8 @@ import { DotBackground } from "@/ui/DotBackground";
 import { HomeButtonGithub } from "@/app/(home)/components/HomeButtonGithub";
 import { HomeButtonLearnMore } from "@/app/(home)/components/HomeButtonLearnMore";
 import HomeScroll from "@/app/(home)/components/ui/HomeScroll";
+import { Logo } from "@/ui/icons/logo";
+import { ENUM_COLOR } from "@/app/utils/enums";
 
 export default function HomeLanding() {
     return (
@@ -13,8 +15,9 @@ export default function HomeLanding() {
 
             {/*app name*/}
             <div className="absolute z-20 mt-8 flex w-full flex-row justify-center">
-                <div className="font-bold tracking-widest text-black">
-                    CODEVRY
+                <div className="flex flex-col items-center font-bold tracking-widest text-black">
+                    <Logo color={ENUM_COLOR.BLACK} />
+                    <div className={"ml-4"}>CODEVRY</div>
                 </div>
             </div>
 
