@@ -34,7 +34,7 @@ export default function HomeIcons() {
     }
 
     return (
-        <div className="flex w-screen justify-center">
+        <div id={"icons"} className="flex w-screen justify-center">
             <div className="flex w-full flex-row justify-between opacity-10 md:w-10/12 lg:w-8/12">
                 {icons.map((icon, index) => (
                     <div
