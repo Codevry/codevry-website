@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.3](https://github.com/codevry/codevry-website/compare/v0.1.2...v0.1.3) (2025-08-30)
+
+
+### Bug Fixes
+
+* dark mode ([494de28](https://github.com/codevry/codevry-website/commit/494de285c0dd1ab3d21c1fa6ecb10775e84c5421))
+
 ## [0.1.2](https://github.com/codevry/codevry-website/compare/v0.1.1...v0.1.2) (2025-08-21)
 
 
