@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.4](https://github.com/codevry/codevry-website/compare/v0.1.3...v0.1.4) (2025-08-30)
+
+
+### Features
+
+* **home:** apps ([7b96304](https://github.com/codevry/codevry-website/commit/7b9630438710ae92ef85405c33f94a8a2432b172))
+* **home:** apps - container ([113bdc5](https://github.com/codevry/codevry-website/commit/113bdc546809728579cef7c3b72b4aca5260902f))
+* **home:** apps - container - image auto width ([e6b3a59](https://github.com/codevry/codevry-website/commit/e6b3a59ca89d02cff9886c54ac5c3d07410ab427))
+* **home:** apps - heading color ([2039153](https://github.com/codevry/codevry-website/commit/2039153b2796d07f1127d9a3017f0a7120c9007b))
+* **home:** apps - projects ([19a9e65](https://github.com/codevry/codevry-website/commit/19a9e65e98a728fc1644803250939d6ae7fbbad0))
+* **home:** apps - store ([f77fdc9](https://github.com/codevry/codevry-website/commit/f77fdc90474202858e26a814459572130826e6a4))
+* **home:** apps - using wlpapr website ([95aab5a](https://github.com/codevry/codevry-website/commit/95aab5ac68d409c44b5e2b4ca4b40d3ce142cf3a))
+* **home:** page - apps ([a723f51](https://github.com/codevry/codevry-website/commit/a723f5173954ff03fd60a707c793d465aed70d63))
+* **home:** tools - github backup ([81e2958](https://github.com/codevry/codevry-website/commit/81e2958819461264b977e1a58670002e05aa2b9d))
+* **icons:** github ([6ba9ec9](https://github.com/codevry/codevry-website/commit/6ba9ec9bd893a25accddf40aca1fd0cc4a81c964))
+* **icons:** wlpapr ([710efac](https://github.com/codevry/codevry-website/commit/710efacbd5ea0b91e34cfcb5ef4ceaf41715f710))
+* **types:** TypeApp ([6bc50a6](https://github.com/codevry/codevry-website/commit/6bc50a60c5b332be4080ac60e85748e01fd6dff2))
+* wlpapr images ([ebd9fe7](https://github.com/codevry/codevry-website/commit/ebd9fe74ae008c16b9dcf5d465b621aeddc5585b))
+
 ## [0.1.3](https://github.com/codevry/codevry-website/compare/v0.1.2...v0.1.3) (2025-08-30)
 
 
