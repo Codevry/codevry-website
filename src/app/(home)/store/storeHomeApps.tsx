@@ -10,14 +10,15 @@ const useStoreHomeApps = create<TypeStore>(() => ({
         {
             title: "Wlpapr",
             screenshots: [
-                "/images/apps/wlpapr/desktop.jpeg",
                 "/images/apps/wlpapr/tablet.png",
+                "/images/apps/wlpapr/desktop.jpeg",
                 "/images/apps/wlpapr/mobile.png",
             ],
             description:
                 "Free random wallpapers to download for your desktop, tablet or mobile devices",
             icon: "wlpapr.svg",
             github: "https://github.com/dawnimpulse/wlpapr-web",
+            website: "https://wlpapr.codevry.com",
             languages: [
                 {
                     name: "Vue.js",
