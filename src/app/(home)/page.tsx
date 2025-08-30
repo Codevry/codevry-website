@@ -3,12 +3,14 @@ import HomeTools from "@/app/(home)/components/ui/HomeTools";
 import HomeIcons from "@/app/(home)/components/ui/HomeIcons";
 import HomeServices from "@/app/(home)/components/ui/HomeServices";
 import HomeFooter from "@/app/(home)/components/ui/HomeFooter";
+import HomeApps from "@/app/(home)/components/ui/HomeApps";
 
 export default function Page() {
     return (
         <div className="flex w-screen flex-col">
             <HomeLanding />
             <HomeIcons />
+            <HomeApps />
             <HomeTools />
             <HomeServices />
             <HomeFooter />
