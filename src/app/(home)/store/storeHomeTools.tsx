@@ -40,6 +40,20 @@ const useStoreHomeTools = create<TypeStore>(() => ({
                 },
             ],
         },
+        {
+            title: "Github Backup",
+            description:
+                "Script to backup your github repositories to a local folder or S3 bucket either manually or via cron docker container",
+            icon: "github-black.svg",
+            github: "https://github.com/DawnImpulse/github-backup",
+            languages: [
+                {
+                    name: "Typescript",
+                    bgColor: "bg-sky-600",
+                    textColor: "text-white",
+                },
+            ],
+        },
     ],
 }));
 
