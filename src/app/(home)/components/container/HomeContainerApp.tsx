@@ -6,8 +6,8 @@ import ChipLanguage from "@/ui/chips/ChipLanguage";
 export default function HomeContainerApp({ project }: { project: TypeApp }) {
     return (
         <div className={"flex flex-col"}>
+            {/* Content Section */}
             <div className="flex flex-col py-8 lg:flex-row lg:items-start">
-                {/* Content Section */}
                 <div className="flex flex-row items-start">
                     {/*icon*/}
                     <Image
@@ -88,16 +88,28 @@ export default function HomeContainerApp({ project }: { project: TypeApp }) {
             {/* Screenshot Section */}
             <div className="scrollbar-visible mt-8 w-full overflow-x-scroll lg:mt-0 lg:ml-8 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-zinc-400 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-zinc-200">
                 <div className="flex flex-row gap-4 pb-2">
-                    {project.screenshots.map((screenshot, index) => (
-                        <Image
-                            key={index}
-                            src={screenshot}
-                            alt=""
-                            width={index === 0 ? 640 : 480}
-                            height={360}
-                            className="h-[360px] rounded-xl object-cover"
-                        />
-                    ))}
+                    {project.screenshots.map((screenshot, index) => {
+                        const height = 360;
+                        const aspectRatio = 16 / 9; // Default aspect ratio
+                        const width = height * aspectRatio;
+
+                        return (
+                            <Image
+                                key={index}
+                                src={screenshot}
+                                alt=""
+                                width={width}
+                                height={height}
+                                className="h-[360px] rounded-xl object-cover"
+                                onLoad={(e) => {
+                                    const img = e.target as HTMLImageElement;
+                                    const actualRatio =
+                                        img.naturalWidth / img.naturalHeight;
+                                    img.style.width = `${height * actualRatio}px`;
+                                }}
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </div>
