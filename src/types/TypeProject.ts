@@ -7,6 +7,16 @@ export type TypeProject = {
     languages: TypeProjectLang[];
 };
 
+export type TypeApp = {
+    icon: string;
+    title: string;
+    description: string;
+    github: string;
+    website?: string;
+    languages: TypeProjectLang[];
+    screenshots: string[];
+};
+
 export type TypeProjectLang = {
     name: string;
     bgColor: string;
