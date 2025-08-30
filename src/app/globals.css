@@ -7,6 +7,16 @@
   --foreground: #171717;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  img, video {
+    filter: none !important;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
