@@ -112,6 +112,8 @@ export default function HomeContainerApp({ project }: { project: TypeApp }) {
                     })}
                 </div>
             </div>
+
+            <div className={"my-16 h-[0.5px] w-full bg-zinc-300"} />
         </div>
     );
 }
