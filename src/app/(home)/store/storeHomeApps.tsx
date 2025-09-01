@@ -32,6 +32,31 @@ const useStoreHomeApps = create<TypeStore>(() => ({
                 },
             ],
         },
+        {
+            title: "Scroll",
+            screenshots: [
+                "/images/apps/scroll/2.png",
+                "/images/apps/scroll/3.png",
+                "/images/apps/scroll/4.png",
+            ],
+            description:
+                "A simple way to access your contacts when your phone is lost/stolen/low-battery or simply unavailable.",
+            icon: "scroll.svg",
+            github: "https://github.com/dawnimpulse/scroll-web",
+            website: "https://scroll.codevry.com",
+            languages: [
+                {
+                    name: "Vue.js",
+                    bgColor: "bg-green-300",
+                    textColor: "text-black",
+                },
+                {
+                    name: "Typescript",
+                    bgColor: "bg-sky-600",
+                    textColor: "text-white",
+                },
+            ],
+        },
     ],
 }));
 
