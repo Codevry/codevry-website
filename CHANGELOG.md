@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.5](https://github.com/codevry/codevry-website/compare/v0.1.4...v0.1.5) (2025-09-01)
+
+
+### Features
+
+* **home:** container - app - bottom margins ([ace8c1b](https://github.com/codevry/codevry-website/commit/ace8c1b3a0fb711d425ca762f1c357242d6111c3))
+* **home:** store - app - scroll ([5390193](https://github.com/codevry/codevry-website/commit/539019325f7bc1a1b7cc4acbf9d108f953e1c7c9))
+* **icons:** scroll ([08d8c70](https://github.com/codevry/codevry-website/commit/08d8c705aee5066464ea27766a14922132014c60))
+* **images:** scroll ([f6ca2fc](https://github.com/codevry/codevry-website/commit/f6ca2fc88da8bdb61a911ad90741af623f377488))
+
 ## [0.1.4](https://github.com/codevry/codevry-website/compare/v0.1.3...v0.1.4) (2025-08-30)
 
 
