@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.6](https://github.com/codevry/codevry-website/compare/v0.1.5...v0.1.6) (2025-09-13)
+
+
+### Features
+
+* **home:** store - services - pixels ([db76b1b](https://github.com/codevry/codevry-website/commit/db76b1bd48c0881538e988c70ec27b0c019bc736))
+* **icons:** image-sync - for pixels ([7ce72c5](https://github.com/codevry/codevry-website/commit/7ce72c5ffc5cade3218b26480aa799351e1d2266))
+
 ## [0.1.5](https://github.com/codevry/codevry-website/compare/v0.1.4...v0.1.5) (2025-09-01)
 
 
