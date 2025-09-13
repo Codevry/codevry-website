@@ -22,6 +22,19 @@ const useStoreHomeServices = create<TypeStore>(() => ({
             ],
         },
         {
+            title: "Pixels",
+            description: "Image processing service on-demand / batch",
+            icon: "image-sync.svg",
+            github: "https://github.com/codevry/pixels-server",
+            languages: [
+                {
+                    name: "Typescript",
+                    bgColor: "bg-sky-600",
+                    textColor: "text-white",
+                },
+            ],
+        },
+        {
             title: "Horm",
             description: "Html form saving backend service",
             icon: "list-box.svg",
