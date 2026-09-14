@@ -65,7 +65,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                             width={20}
                             height={20}
                             loading="lazy"
-                            className="size-5 opacity-80 invert"
+                            className="icon-white size-5 opacity-80"
                         />
                     </span>
 

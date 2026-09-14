@@ -95,7 +95,7 @@ export default function Hero() {
                     alt=""
                     width={24}
                     height={24}
-                    className="size-6 animate-float-hint opacity-40 invert"
+                    className="icon-white size-6 animate-float-hint opacity-40"
                 />
             </div>
         </section>

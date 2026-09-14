@@ -54,7 +54,7 @@ export default function Services({ limit, heading = true }: ServicesProps) {
                                             width={22}
                                             height={22}
                                             loading="lazy"
-                                            className="size-[22px] opacity-70 invert"
+                                            className="icon-white size-[22px] opacity-70"
                                         />
                                     </span>
 
