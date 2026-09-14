@@ -47,7 +47,7 @@ export const ROUTES: RouteMeta[] = [
         label: "About",
         title: `About Saksham Khurana — Founder & Principal Software Architect | ${SITE.name}`,
         description:
-            "Saksham Khurana is a software architect in New Delhi with 9+ years building websites, applications and servers for clients including Capgemini, Noumena, Visualoud, MyDataLabs, TNine and Wayne.",
+            "Saksham Khurana is a software architect in New Delhi with 9+ years building websites, applications and servers for clients including Angeles Academy, Capgemini, Noumena, Visualoud, MyDataLabs, TNine and Wayne.",
         priority: 0.8,
         changefreq: "yearly",
     },

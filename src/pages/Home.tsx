@@ -13,9 +13,11 @@ export default function Home() {
             <Seo path="/" />
             <Hero />
             <Credibility />
+            {/* Work leads: the shipped evidence earns the read before the
+                pitch does. */}
+            <Work preview />
             <Services limit={6} />
             <Process />
-            <Work preview />
             <About />
             <ContactCta />
         </>

@@ -1,8 +1,9 @@
-import { CLIENTS, STATS } from "@/data/site";
-import { Container, Reveal } from "@/components/primitives";
+import { CLIENTS } from "@/data/site";
+import { Container } from "@/components/primitives";
+import { cn } from "@/lib/cn";
 
 /**
- * Trust strip: who the work has been for, and the numbers behind it.
+ * Trust strip: who the work has been for.
  *
  * Client names are set as type rather than logo files — using a company's mark
  * implies an endorsement they have not given, and wordmarks stay crisp at any
@@ -16,7 +17,7 @@ export default function Credibility() {
         >
             <Container>
                 <h2 id="credibility-heading" className="sr-only">
-                    Clients and track record
+                    Clients
                 </h2>
 
                 <p className="text-center font-mono text-xs tracking-[0.22em] text-white/35 uppercase">
@@ -25,47 +26,41 @@ export default function Credibility() {
 
                 {/* Marquee on small screens, static row once there is room. */}
                 <div className="mt-8 overflow-hidden lg:hidden">
-                    <div className="marquee-track flex w-max gap-12">
+                    <div className="marquee-track flex w-max gap-10">
                         {[...CLIENTS, ...CLIENTS].map((client, i) => (
                             <span
-                                key={`${client}-${i}`}
+                                key={`${client.name}-${i}`}
+                                // The duplicate pass exists only to make the
+                                // loop seamless; it is not extra content.
                                 aria-hidden={i >= CLIENTS.length}
-                                className="text-lg font-medium tracking-tight whitespace-nowrap text-white/45"
+                                className={cn(
+                                    "whitespace-nowrap",
+                                    client.primary
+                                        ? "text-lg font-semibold tracking-tight text-white/80"
+                                        : "text-lg font-medium tracking-tight text-white/45",
+                                )}
                             >
-                                {client}
+                                {client.name}
                             </span>
                         ))}
                     </div>
                 </div>
 
-                <ul className="mt-8 hidden items-center justify-between gap-8 lg:flex">
+                <ul className="mt-8 hidden flex-wrap items-center justify-between gap-x-8 gap-y-4 lg:flex">
                     {CLIENTS.map((client) => (
                         <li
-                            key={client}
-                            className="text-xl font-medium tracking-tight text-white/40 transition-colors duration-500 hover:text-white/75"
+                            key={client.name}
+                            className={cn(
+                                "tracking-tight transition-colors duration-500",
+                                client.primary
+                                    ? "text-2xl font-semibold text-white/80 hover:text-white"
+                                    : "text-xl font-medium text-white/40 hover:text-white/75",
+                            )}
                         >
-                            {client}
+                            {client.name}
                         </li>
                     ))}
                 </ul>
-
-                <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-white/[0.07] pt-12 lg:grid-cols-4">
-                    {STATS.map((stat, i) => (
-                        <Reveal key={stat.label} delay={i * 0.07}>
-                            <div>
-                                <dt className="sr-only">{stat.label}</dt>
-                                <dd>
-                                    <span className="block text-4xl font-medium tracking-tight text-white sm:text-5xl">
-                                        {stat.value}
-                                    </span>
-                                    <span className="mt-2 block text-sm text-white/45">
-                                        {stat.label}
-                                    </span>
-                                </dd>
-                            </div>
-                        </Reveal>
-                    ))}
-                </dl>
             </Container>
         </section>
     );

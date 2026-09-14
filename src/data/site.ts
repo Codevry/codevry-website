@@ -48,22 +48,25 @@ export const SOCIALS = [
     { name: "Strava", href: "https://www.strava.com/athletes/116418175", icon: "strava" },
 ] as const;
 
-/** Companies and clients Saksham has delivered for. Rendered as wordmarks. */
-export const CLIENTS = [
-    "Capgemini",
-    "Noumena",
-    "Visualoud",
-    "MyDataLabs",
-    "TNine",
-    "Wayne",
-] as const;
+export type Client = {
+    name: string;
+    /** Rendered with more weight than the rest of the roster. */
+    primary?: boolean;
+};
 
-export const STATS = [
-    { value: "9+", label: "Years shipping software" },
-    { value: "8", label: "Open-source products" },
-    { value: "6", label: "Clients & companies" },
-    { value: "3", label: "Platforms — web, mobile, server" },
-] as const;
+/**
+ * Companies and clients delivered for. Rendered as wordmarks rather than logo
+ * files — using a company's mark implies an endorsement they have not given.
+ */
+export const CLIENTS: Client[] = [
+    { name: "Angeles Academy", primary: true },
+    { name: "Capgemini" },
+    { name: "Noumena" },
+    { name: "Visualoud" },
+    { name: "MyDataLabs" },
+    { name: "TNine" },
+    { name: "Wayne" },
+];
 
 export type Service = {
     slug: string;

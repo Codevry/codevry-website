@@ -75,8 +75,8 @@ export default function Hero() {
                     </h1>
 
                     <p className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-white/60 sm:mt-7 sm:text-lg">
-                        I'm {FOUNDER.name} — founder of {SITE.name}.{" "}
-                        {FOUNDER.yearsExperience} years architecting and
+                        {SITE.name} is an independent software architecture
+                        studio — {FOUNDER.yearsExperience} years designing and
                         building websites, applications, APIs and AI systems for
                         teams that need them to work in production, not just in
                         a demo.
