@@ -1,0 +1,23 @@
+{
+    "name": "Codevry — AI Software Architecture & Engineering",
+    "short_name": "Codevry",
+    "description": "Independent AI software architecture studio led by Saksham Khurana.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#060709",
+    "theme_color": "#060709",
+    "icons": [
+        {
+            "src": "/icons/codevry-white.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "/opengraph-image.png",
+            "sizes": "1200x630",
+            "type": "image/png"
+        }
+    ]
+}

@@ -1,14 +1,8 @@
-module.exports = {
-    semi: true,
+/** @type {import("prettier").Config} */
+export default {
     tabWidth: 4,
-    printWidth: 80,
+    semi: true,
     singleQuote: false,
-    tsxSingleQuote: false,
-    trailingComma: "es5",
-    bracketSpacing: true,
-    bracketSameLine: false,
-    arrowParens: "always",
-    endOfLine: "lf",
-    parser: "typescript",
+    trailingComma: "all",
     plugins: ["prettier-plugin-tailwindcss"],
 };

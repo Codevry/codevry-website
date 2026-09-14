@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <meta name="theme-color" content="#060709" />
+        <meta name="color-scheme" content="dark" />
+        <meta name="author" content="Saksham Khurana" />
+        <meta name="generator" content="Vite" />
+
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/icons/codevry-white.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/opengraph-image.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <!-- Google Fonts. Preconnect to both hosts so the DNS + TLS handshakes
+             start immediately rather than after the CSS is parsed; `display=swap`
+             keeps text visible in the fallback face while the webfont loads. -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap"
+        />
+        <!-- Scroll-reveal elements are prerendered at opacity 0 and animated in
+             by JavaScript. Without JS that animation never runs, so every
+             revealed section would stay invisible — this pins them open. -->
+        <noscript>
+            <style>
+                [data-reveal] {
+                    opacity: 1 !important;
+                    transform: none !important;
+                }
+            </style>
+        </noscript>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.tsx"></script>
+    </body>
+</html>
