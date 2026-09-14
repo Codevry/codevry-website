@@ -201,7 +201,9 @@ export default function ArchitectureScene({ reducedMotion }: SceneProps) {
     const core = useRef<THREE.Group>(null);
     const shell = useRef<THREE.Mesh>(null);
     const { nodePositions, nodeColors, linkPositions, linkColors } = useGraph();
-    const { viewport } = useThree();
+    // Canvas pixel size, not three.js viewport units — the latter varies with
+    // aspect ratio, which makes it a poor proxy for "is this a phone".
+    const { size } = useThree();
 
     // Bright violet rim on the core itself, then a tight teal atmosphere.
     const nucleusBloom = useGlowMaterial("#cdc4ff", 1.3, 0.85);
@@ -209,14 +211,16 @@ export default function ArchitectureScene({ reducedMotion }: SceneProps) {
     const haloGlow = useGlowMaterial("#34d8c4", 4.2, 0.42);
 
     /**
-     * Keep the graph clear of the copy. Wide screens have a free right-hand
-     * column to push it into; narrow ones don't, so it lifts above the text
-     * block and shrinks instead of sitting behind the paragraph.
+     * Below the lg breakpoint the hero stacks and the canvas gets its own band
+     * above the copy, so the graph just centres in it. From lg up the canvas is
+     * full-bleed behind the text, and the graph shifts into the free right-hand
+     * column so it never sits under the headline.
      */
-    const narrow = viewport.width < 6;
-    const offsetX = viewport.width > 9 ? 2.6 : narrow ? 0 : 1.3;
-    const offsetY = narrow ? 2.2 : 0;
-    const scale = narrow ? 0.72 : 1;
+    const stacked = size.width < 1024;
+    const offsetX = stacked ? 0 : size.width > 1280 ? 2.6 : 1.4;
+    // Stacked, the band is short and wide; without the bump the graph reads as
+    // a small decoration rather than the subject.
+    const scale = stacked ? 0.95 : 1;
 
     useFrame((state, delta) => {
         if (reducedMotion || !group.current) return;
@@ -227,7 +231,7 @@ export default function ArchitectureScene({ reducedMotion }: SceneProps) {
 
         // Pointer parallax. Damped so it glides instead of snapping, and scaled
         // down on narrow viewports where the pointer is usually a thumb.
-        const strength = viewport.width < 6 ? 0.08 : 0.16;
+        const strength = stacked ? 0.08 : 0.16;
         const targetX = -state.pointer.y * strength + Math.sin(t * 0.25) * 0.04;
         const targetZ = state.pointer.x * strength * 0.5;
 
@@ -258,7 +262,7 @@ export default function ArchitectureScene({ reducedMotion }: SceneProps) {
         <>
             {/* No lights: every material here is basic, additive or a custom
                 shader, so scene lighting would cost frames and change nothing. */}
-            <group ref={group} position={[offsetX, offsetY, 0]} scale={scale}>
+            <group ref={group} position={[offsetX, 0, 0]} scale={scale}>
                 {/* Wired connections between nearby nodes. */}
                 <lineSegments>
                     <bufferGeometry>
