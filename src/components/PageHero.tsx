@@ -13,7 +13,15 @@ export default function PageHero({
     lede?: ReactNode;
 }) {
     return (
-        <section className="bg-grid relative overflow-hidden border-b border-white/[0.07] pt-36 pb-20 sm:pt-44 sm:pb-24">
+        <section className="relative overflow-hidden border-b border-white/[0.07] pt-36 pb-20 sm:pt-44 sm:pb-24">
+            {/* The grid lives on its own layer rather than on the section, and
+                fades in from the top. Painted on the section it starts at the
+                page origin, so a 64px line landed right at the edge of the
+                fixed header and read as a stray second bar. */}
+            <div
+                aria-hidden="true"
+                className="bg-grid pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent_0,transparent_88px,black_240px)]"
+            />
             <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-x-0 -top-40 h-[420px] bg-[radial-gradient(ellipse_at_top,rgba(109,92,255,0.18),transparent_60%)]"

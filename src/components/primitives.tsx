@@ -55,7 +55,7 @@ type ButtonProps = {
 };
 
 const buttonBase =
-    "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition duration-300 ease-out-expo";
+    "group inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-medium transition duration-300 ease-out-expo";
 
 const buttonVariants = {
     primary:

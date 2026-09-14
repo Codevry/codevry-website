@@ -105,7 +105,7 @@ export default function ContactPage() {
 
                                 <a
                                     href={`mailto:${FOUNDER.email}?subject=Project%20enquiry`}
-                                    className="group mt-10 inline-flex w-fit items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-ink-950 transition duration-300 ease-out-expo hover:bg-signal-300 hover:shadow-[0_0_40px_-8px] hover:shadow-signal-400/60"
+                                    className="group mt-10 inline-flex w-fit items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-medium text-ink-950 transition duration-300 ease-out-expo hover:bg-signal-300 hover:shadow-[0_0_40px_-8px] hover:shadow-signal-400/60"
                                 >
                                     {FOUNDER.email}
                                     <ArrowIcon />

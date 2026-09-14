@@ -68,7 +68,7 @@ export default function Header() {
                                 to={item.path}
                                 className={({ isActive }) =>
                                     cn(
-                                        "rounded-full px-4 py-2 text-sm transition-colors duration-300",
+                                        "rounded-xl px-4 py-2 text-sm transition-colors duration-300",
                                         isActive
                                             ? "text-white"
                                             : "text-white/55 hover:text-white",
@@ -83,7 +83,7 @@ export default function Header() {
                     <div className="flex items-center gap-2">
                         <Link
                             to="/contact"
-                            className="group hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-ink-950 transition duration-300 ease-out-expo hover:bg-signal-300 sm:inline-flex"
+                            className="group hidden items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-medium text-ink-950 transition duration-300 ease-out-expo hover:bg-signal-300 sm:inline-flex"
                         >
                             Start a project
                             <ArrowIcon />
@@ -95,7 +95,7 @@ export default function Header() {
                             aria-expanded={open}
                             aria-controls="mobile-nav"
                             aria-label={open ? "Close menu" : "Open menu"}
-                            className="inline-flex size-10 items-center justify-center rounded-full border border-white/15 text-white md:hidden"
+                            className="inline-flex size-10 items-center justify-center rounded-xl border border-white/15 text-white md:hidden"
                         >
                             <svg
                                 viewBox="0 0 20 20"

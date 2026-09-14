@@ -37,7 +37,7 @@ export default function ContactCta() {
                         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
                             <a
                                 href={`mailto:${FOUNDER.email}?subject=Project%20enquiry`}
-                                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-ink-950 transition duration-300 ease-out-expo hover:bg-signal-300 hover:shadow-[0_0_40px_-8px] hover:shadow-signal-400/60"
+                                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-medium text-ink-950 transition duration-300 ease-out-expo hover:bg-signal-300 hover:shadow-[0_0_40px_-8px] hover:shadow-signal-400/60"
                             >
                                 {FOUNDER.email}
                                 <ArrowIcon />
@@ -48,7 +48,7 @@ export default function ContactCta() {
                                     href={FOUNDER.bookingUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-sm font-medium text-white/85 transition duration-300 ease-out-expo hover:border-white/35 hover:bg-white/5 hover:text-white"
+                                    className="group inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-7 py-3.5 text-sm font-medium text-white/85 transition duration-300 ease-out-expo hover:border-white/35 hover:bg-white/5 hover:text-white"
                                 >
                                     Book a call
                                     <ArrowIcon />

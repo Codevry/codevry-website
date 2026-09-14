@@ -55,7 +55,7 @@ export default function Work({ preview = false }: WorkProps) {
                         <Reveal delay={0.1}>
                             <Link
                                 to="/work"
-                                className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-white/85 transition duration-300 ease-out-expo hover:border-white/35 hover:bg-white/5 hover:text-white"
+                                className="group inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-medium text-white/85 transition duration-300 ease-out-expo hover:border-white/35 hover:bg-white/5 hover:text-white"
                             >
                                 All {PROJECTS.length} projects
                                 <ArrowIcon />
@@ -80,7 +80,7 @@ export default function Work({ preview = false }: WorkProps) {
                                     aria-selected={active}
                                     onClick={() => setFilter(option)}
                                     className={cn(
-                                        "rounded-full border px-4 py-2 text-sm transition duration-300",
+                                        "rounded-xl border px-4 py-2 text-sm transition duration-300",
                                         active
                                             ? "border-white/25 bg-white text-ink-950"
                                             : "border-white/12 text-white/55 hover:border-white/30 hover:text-white",
