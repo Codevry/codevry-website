@@ -1,7 +1,22 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
+
+/**
+ * An icon from public/icons, painted in the current text colour. The files are
+ * used only as shape masks (see `.icon` in index.css), so every icon takes its
+ * colour from the palette whatever fills the SVG itself carries.
+ */
+export function MaskIcon({ src, className }: { src: string; className?: string }) {
+    return (
+        <span
+            aria-hidden="true"
+            className={cn("icon", className)}
+            style={{ "--icon": `url("${src}")` } as CSSProperties}
+        />
+    );
+}
 
 /** Page-width container. One place to change the site's measure. */
 export function Container({
@@ -32,13 +47,13 @@ export function Eyebrow({
     return (
         <p
             className={cn(
-                "flex items-center gap-3 font-mono text-xs tracking-[0.22em] text-signal-400 uppercase",
+                "flex items-center gap-3 font-mono text-xs tracking-[0.22em] text-accent uppercase",
                 className,
             )}
         >
             <span
                 aria-hidden="true"
-                className="h-px w-6 bg-signal-400/60"
+                className="h-px w-6 bg-accent/60"
             />
             {children}
         </p>
@@ -59,8 +74,8 @@ const buttonBase =
 
 const buttonVariants = {
     primary:
-        "bg-white text-ink-950 hover:bg-signal-300 hover:shadow-[0_0_36px_-6px] hover:shadow-signal-400/50",
-    ghost: "border border-white/15 text-white/85 hover:border-white/35 hover:bg-white/5 hover:text-white",
+        "bg-accent text-on-accent hover:bg-accent-hover hover:shadow-[0_10px_24px_-12px] hover:shadow-accent/70",
+    ghost: "border border-line-strong text-fg hover:border-fg/40 hover:bg-fg/5 hover:text-fg",
 };
 
 export function Button({
@@ -104,7 +119,7 @@ export function Card({
     return (
         <div
             className={cn(
-                "hairline relative overflow-hidden rounded-2xl border border-white/[0.07] bg-ink-900/70 p-6 backdrop-blur-sm transition duration-500 ease-out-expo hover:border-white/15 hover:bg-ink-800/70",
+                "relative overflow-hidden rounded-2xl border border-line bg-surface p-6 backdrop-blur-sm transition duration-500 ease-out-expo hover:border-line-strong hover:bg-surface",
                 className,
             )}
         >
@@ -163,11 +178,11 @@ export function SectionHeading({
     return (
         <div className={cn("max-w-2xl", className)}>
             <Eyebrow>{eyebrow}</Eyebrow>
-            <Tag className="mt-5 text-3xl leading-[1.12] font-medium tracking-tight text-balance text-white sm:text-4xl md:text-5xl">
+            <Tag className="mt-5 text-3xl leading-[1.12] font-medium tracking-tight text-balance text-fg sm:text-4xl md:text-5xl">
                 {title}
             </Tag>
             {lede && (
-                <p className="mt-5 text-base leading-relaxed text-pretty text-white/55 sm:text-lg">
+                <p className="mt-5 text-base leading-relaxed text-pretty text-fg-2 sm:text-lg">
                     {lede}
                 </p>
             )}

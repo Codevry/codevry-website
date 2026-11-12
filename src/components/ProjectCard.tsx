@@ -1,5 +1,5 @@
 import type { Project } from "@/data/site";
-import { Card } from "@/components/primitives";
+import { Card, MaskIcon } from "@/components/primitives";
 
 /** GitHub mark, inlined so it can inherit `currentColor` on hover. */
 function GithubMark() {
@@ -38,17 +38,17 @@ export default function ProjectCard({ project }: { project: Project }) {
     return (
         <Card className="group flex h-full flex-col p-0">
             {hasShots && (
-                <div className="relative aspect-[16/10] overflow-hidden border-b border-white/[0.07] bg-ink-800">
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-sunken">
                     <img
                         src={project.screenshots![0]}
                         alt={`${project.title} interface`}
                         loading="lazy"
                         decoding="async"
-                        className="size-full object-cover object-top opacity-70 transition duration-700 ease-out-expo group-hover:scale-[1.03] group-hover:opacity-95"
+                        className="size-full object-cover object-top transition duration-700 ease-out-expo group-hover:scale-[1.03]"
                     />
                     <div
                         aria-hidden="true"
-                        className="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent"
+                        className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent"
                     />
                 </div>
             )}
@@ -57,29 +57,22 @@ export default function ProjectCard({ project }: { project: Project }) {
                 <div className="flex items-start gap-3.5">
                     <span
                         aria-hidden="true"
-                        className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]"
+                        className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-line bg-fg/[0.04]"
                     >
-                        <img
-                            src={project.icon}
-                            alt=""
-                            width={20}
-                            height={20}
-                            loading="lazy"
-                            className="icon-white size-5 opacity-80"
-                        />
+                        <MaskIcon src={project.icon} className="size-5 text-fg-2" />
                     </span>
 
                     <div className="min-w-0">
-                        <h3 className="text-base font-medium tracking-tight text-white">
+                        <h3 className="text-base font-medium tracking-tight text-fg">
                             {project.title}
                         </h3>
-                        <p className="mt-0.5 font-mono text-[11px] tracking-[0.18em] text-signal-400/80 uppercase">
+                        <p className="mt-0.5 font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
                             {project.category}
                         </p>
                     </div>
                 </div>
 
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-white/50">
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-fg-2">
                     {project.description}
                 </p>
 
@@ -87,19 +80,19 @@ export default function ProjectCard({ project }: { project: Project }) {
                     {project.tags.map((tag) => (
                         <li
                             key={tag}
-                            className="rounded-full border border-white/10 px-2.5 py-1 text-[11px] text-white/45"
+                            className="rounded-full border border-line px-2.5 py-1 text-[11px] text-fg-3"
                         >
                             {tag}
                         </li>
                     ))}
                 </ul>
 
-                <div className="mt-6 flex items-center gap-4 border-t border-white/[0.07] pt-5">
+                <div className="mt-6 flex items-center gap-4 border-t border-line pt-5">
                     <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white"
+                        className="inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-fg"
                     >
                         <GithubMark />
                         Source
@@ -113,7 +106,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                             href={project.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-signal-300"
+                            className="inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent"
                         >
                             <ExternalMark />
                             Live

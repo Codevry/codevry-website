@@ -5,11 +5,11 @@
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
-    "background_color": "#060709",
-    "theme_color": "#060709",
+    "background_color": "#f5efe4",
+    "theme_color": "#f5efe4",
     "icons": [
         {
-            "src": "/icons/codevry-white.svg",
+            "src": "/icons/codevry.svg",
             "sizes": "any",
             "type": "image/svg+xml",
             "purpose": "any"

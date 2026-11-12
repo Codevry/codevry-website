@@ -5,7 +5,7 @@ export default function Process() {
     return (
         <section
             aria-labelledby="process-heading"
-            className="bg-grid relative border-y border-white/[0.07] py-24 sm:py-32"
+            className="bg-grid relative border-y border-line py-24 sm:py-32"
         >
             <Container>
                 <Reveal>
@@ -20,21 +20,21 @@ export default function Process() {
                     />
                 </Reveal>
 
-                <ol className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.07] md:grid-cols-2 lg:grid-cols-4">
+                <ol className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
                     {PROCESS.map((stage, i) => (
-                        <li key={stage.step} className="bg-ink-950">
+                        <li key={stage.step} className="bg-page">
                             <Reveal delay={i * 0.08}>
                                 <div className="flex h-full flex-col p-7">
                                     <span
                                         aria-hidden="true"
-                                        className="font-mono text-xs tracking-[0.22em] text-signal-400"
+                                        className="font-mono text-xs tracking-[0.22em] text-accent"
                                     >
                                         {stage.step}
                                     </span>
-                                    <h3 className="mt-4 text-lg font-medium tracking-tight text-white">
+                                    <h3 className="mt-4 text-lg font-medium tracking-tight text-fg">
                                         {stage.title}
                                     </h3>
-                                    <p className="mt-3 text-sm leading-relaxed text-white/50">
+                                    <p className="mt-3 text-sm leading-relaxed text-fg-2">
                                         {stage.body}
                                     </p>
                                 </div>

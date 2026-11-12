@@ -20,15 +20,15 @@ export default function NotFound() {
 
             <section className="bg-grid flex min-h-[100svh] items-center pt-24 pb-20">
                 <Container>
-                    <p className="font-mono text-xs tracking-[0.22em] text-signal-400 uppercase">
+                    <p className="font-mono text-xs tracking-[0.22em] text-accent uppercase">
                         Error 404
                     </p>
 
-                    <h1 className="mt-6 max-w-2xl text-[clamp(2.25rem,6vw,4rem)] leading-[1.06] font-medium tracking-tight text-balance text-white">
+                    <h1 className="mt-6 max-w-2xl text-[clamp(2.25rem,6vw,4rem)] leading-[1.06] font-medium tracking-tight text-balance text-fg">
                         This route was never architected.
                     </h1>
 
-                    <p className="mt-6 max-w-lg text-base leading-relaxed text-white/55">
+                    <p className="mt-6 max-w-lg text-base leading-relaxed text-fg-2">
                         The page you asked for doesn't exist. Here is everything
                         that does.
                     </p>
@@ -39,7 +39,7 @@ export default function NotFound() {
                                 <li key={route.path}>
                                     <Link
                                         to={route.path}
-                                        className="group inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-medium text-white/85 transition duration-300 ease-out-expo hover:border-white/35 hover:bg-white/5 hover:text-white"
+                                        className="group inline-flex items-center gap-2 rounded-xl border border-line-strong px-6 py-3 text-sm font-medium text-fg transition duration-300 ease-out-expo hover:border-fg/40 hover:bg-fg/5 hover:text-fg"
                                     >
                                         {route.label}
                                         <ArrowIcon />

@@ -13,14 +13,14 @@ export default function Credibility() {
     return (
         <section
             aria-labelledby="credibility-heading"
-            className="relative border-y border-white/[0.07] bg-ink-900/30 py-14 sm:py-16"
+            className="relative border-y border-line bg-sunken py-14 sm:py-16"
         >
             <Container>
                 <h2 id="credibility-heading" className="sr-only">
                     Clients
                 </h2>
 
-                <p className="text-center font-mono text-xs tracking-[0.22em] text-white/35 uppercase">
+                <p className="text-center font-mono text-xs tracking-[0.22em] text-fg-3 uppercase">
                     Trusted by teams at
                 </p>
 
@@ -36,8 +36,8 @@ export default function Credibility() {
                                 className={cn(
                                     "whitespace-nowrap",
                                     client.primary
-                                        ? "text-lg font-semibold tracking-tight text-white/80"
-                                        : "text-lg font-medium tracking-tight text-white/45",
+                                        ? "text-lg font-semibold tracking-tight text-fg"
+                                        : "text-lg font-medium tracking-tight text-fg-3",
                                 )}
                             >
                                 {client.name}
@@ -53,8 +53,8 @@ export default function Credibility() {
                             className={cn(
                                 "tracking-tight transition-colors duration-500",
                                 client.primary
-                                    ? "text-2xl font-semibold text-white/80 hover:text-white"
-                                    : "text-xl font-medium text-white/40 hover:text-white/75",
+                                    ? "text-2xl font-semibold text-fg hover:text-fg"
+                                    : "text-xl font-medium text-fg-3 hover:text-fg",
                             )}
                         >
                             {client.name}
