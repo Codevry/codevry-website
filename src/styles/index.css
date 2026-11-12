@@ -53,6 +53,16 @@
     :root {
         color-scheme: light;
         --grid-line: rgb(42 29 21 / 0.05);
+
+        /* Hairline line figures: brown line work, purple for what the
+           pointer lights. Each figure's container sets --hairline-plate to
+           the ground directly behind it, since plates are filled. */
+        --hairline-plate: var(--color-page);
+        --hairline-hi: var(--color-accent);
+        --hairline-edge: var(--color-fg-2);
+        --hairline-mid: #8a7260;
+        --hairline-lo: #d3c6b1;
+        --hairline-stroke: 1;
     }
 
     * {
@@ -110,6 +120,14 @@
             linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
             linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
         background-size: 64px 64px;
+    }
+
+    /* Drafting-paper grid for the hero's drawing field. */
+    .bg-grid-fine {
+        background-image:
+            linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+        background-size: 24px 24px;
     }
 
     /**

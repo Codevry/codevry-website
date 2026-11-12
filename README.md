@@ -17,6 +17,7 @@ be indexed.
 | Routing    | React Router 6                                              |
 | Styling    | Tailwind CSS v4 (tokens in `src/styles/index.css`)         |
 | Motion     | `motion` (Framer Motion) for scroll reveals                |
+| Drawings   | `@lucasmarkes/hairline` line figures (hero), MIT           |
 
 React Router is pinned to v6: `vite-react-ssg` imports `react-router-dom/server.js`
 during the prerender, and v7 removed that entry point.

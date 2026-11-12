@@ -13,6 +13,7 @@
     "seo": "node scripts/generate-seo.mjs"
   },
   "dependencies": {
+    "@lucasmarkes/hairline": "0.5.1",
     "clsx": "^2.1.1",
     "motion": "^12.23.6",
     "react": "^19.1.0",
