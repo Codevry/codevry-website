@@ -19,7 +19,11 @@ export default defineConfig({
         // Flat output (`/about` -> `about.html`) so the emitted `404.html` lands
         // where static hosts actually look for it.
         dirStyle: "flat",
-        script: "async",
+        // No `script: "async"`: an async module can run before the parser
+        // reaches the inline build-hash script at the end of <body>, and the
+        // client then fetches `static-loader-data-manifest-undefined.json` and
+        // fails hydration. Module scripts are deferred by default, which
+        // already keeps them off the critical path.
         // beasties/critters is an optional peer and isn't installed; the CSS
         // bundle is small enough that inlining it buys little.
         beastiesOptions: false,

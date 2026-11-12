@@ -8,6 +8,7 @@
 
 import { readdir, readFile, writeFile, stat } from "node:fs/promises";
 import { join, relative, sep } from "node:path";
+import { execFileSync } from "node:child_process";
 
 const DIST = new URL("../dist/", import.meta.url).pathname;
 const SITE_URL = (process.env.SITE_URL ?? "https://codevry.com").replace(
@@ -65,6 +66,15 @@ const escapeXml = (value) =>
             })[c],
     );
 
+function lastCommitDate() {
+    try {
+        const date = execFileSync("git", ["log", "-1", "--format=%cs"], { encoding: "utf8" }).trim();
+        return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : null;
+    } catch {
+        return null;
+    }
+}
+
 async function main() {
     try {
         await stat(DIST);
@@ -92,7 +102,10 @@ async function main() {
             a.path.localeCompare(b.path),
     );
 
-    const lastmod = new Date().toISOString().slice(0, 10);
+    // The date of the last commit, not of the build: a redeploy alone doesn't
+    // change any page, and claiming it did teaches crawlers to ignore lastmod.
+    // Without git history the field is left out rather than guessed.
+    const lastmod = lastCommitDate();
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -100,8 +113,7 @@ ${entries
     .map(
         ({ path, priority, changefreq }) => `    <url>
         <loc>${escapeXml(path === "/" ? `${SITE_URL}/` : `${SITE_URL}${path}`)}</loc>
-        <lastmod>${lastmod}</lastmod>
-        <changefreq>${changefreq}</changefreq>
+${lastmod ? `        <lastmod>${lastmod}</lastmod>\n` : ""}        <changefreq>${changefreq}</changefreq>
         <priority>${priority}</priority>
     </url>`,
     )

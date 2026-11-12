@@ -192,6 +192,12 @@ export type Project = {
     website?: string;
     tags: string[];
     screenshots?: string[];
+    /**
+     * Card image, sized for the card rather than the full capture. Generated
+     * from the first screenshot by `npm run assets`; the dimensions are the
+     * file's own, so the browser can reserve its space before it loads.
+     */
+    cover?: { src: string; width: number; height: number };
 };
 
 /**
@@ -213,6 +219,7 @@ export const PROJECTS: Project[] = [
             "/images/apps/wlpapr/tablet.png",
             "/images/apps/wlpapr/mobile.png",
         ],
+        cover: { src: "/images/apps/wlpapr/cover.webp", width: 800, height: 544 },
     },
     {
         title: "Scroll",
@@ -228,6 +235,7 @@ export const PROJECTS: Project[] = [
             "/images/apps/scroll/3.png",
             "/images/apps/scroll/4.png",
         ],
+        cover: { src: "/images/apps/scroll/cover.webp", width: 800, height: 1331 },
     },
     {
         title: "Foundation",

@@ -33,14 +33,16 @@ function ExternalMark() {
 }
 
 export default function ProjectCard({ project }: { project: Project }) {
-    const hasShots = Boolean(project.screenshots?.length);
+    const { cover } = project;
 
     return (
         <Card className="group flex h-full flex-col p-0">
-            {hasShots && (
+            {cover && (
                 <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-sunken">
                     <img
-                        src={project.screenshots![0]}
+                        src={cover.src}
+                        width={cover.width}
+                        height={cover.height}
                         alt={`${project.title} interface`}
                         loading="lazy"
                         decoding="async"
