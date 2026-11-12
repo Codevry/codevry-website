@@ -1,6 +1,6 @@
 import { Head } from "vite-react-ssg";
 import { SITE } from "@/data/site";
-import { canonical, getRoute, graphFor } from "@/lib/seo";
+import { SHARE_IMAGE, canonical, getRoute, graphFor, shareImage } from "@/lib/seo";
 
 type SeoProps = {
     /** Registered route path — pulls title/description from `ROUTES`. */
@@ -19,7 +19,7 @@ type SeoProps = {
 export default function Seo({ path, schema = [], noindex = false }: SeoProps) {
     const route = getRoute(path);
     const url = canonical(path);
-    const ogImage = `${SITE.url}/opengraph-image.png`;
+    const ogImage = shareImage(route);
 
     return (
         <Head>
@@ -43,17 +43,17 @@ export default function Seo({ path, schema = [], noindex = false }: SeoProps) {
             <meta property="og:title" content={route.title} />
             <meta property="og:description" content={route.description} />
             <meta property="og:image" content={ogImage} />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
-            <meta
-                property="og:image:alt"
-                content={`${SITE.name} — ${SITE.tagline}`}
-            />
+            <meta property="og:image:secure_url" content={ogImage} />
+            <meta property="og:image:type" content={SHARE_IMAGE.type} />
+            <meta property="og:image:width" content={String(SHARE_IMAGE.width)} />
+            <meta property="og:image:height" content={String(SHARE_IMAGE.height)} />
+            <meta property="og:image:alt" content={route.imageAlt} />
 
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={route.title} />
             <meta name="twitter:description" content={route.description} />
             <meta name="twitter:image" content={ogImage} />
+            <meta name="twitter:image:alt" content={route.imageAlt} />
             <meta name="twitter:creator" content="@dawnimpulse" />
 
             <script type="application/ld+json">
