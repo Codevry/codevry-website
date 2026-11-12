@@ -91,11 +91,11 @@ export default function ContactPage() {
                                 <div>
                                     <h2
                                         id="reach-heading"
-                                        className="text-2xl font-medium tracking-tight text-white sm:text-3xl"
+                                        className="text-2xl font-medium tracking-tight text-fg sm:text-3xl"
                                     >
                                         Email me directly
                                     </h2>
-                                    <p className="mt-4 text-sm leading-relaxed text-white/55">
+                                    <p className="mt-4 text-sm leading-relaxed text-fg-2">
                                         It reaches me, not an inbox someone else
                                         triages. Include what you can from the
                                         list opposite — the more specific the
@@ -105,7 +105,7 @@ export default function ContactPage() {
 
                                 <a
                                     href={`mailto:${FOUNDER.email}?subject=Project%20enquiry`}
-                                    className="group mt-10 inline-flex w-fit items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-medium text-ink-950 transition duration-300 ease-out-expo hover:bg-signal-300 hover:shadow-[0_0_40px_-8px] hover:shadow-signal-400/60"
+                                    className="group mt-10 inline-flex w-fit items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-medium text-on-accent transition duration-300 ease-out-expo hover:bg-accent-hover hover:shadow-[0_10px_24px_-12px] hover:shadow-accent/70"
                                 >
                                     {FOUNDER.email}
                                     <ArrowIcon />
@@ -116,7 +116,7 @@ export default function ContactPage() {
                                         href={FOUNDER.bookingUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group mt-3 inline-flex w-fit items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
+                                        className="group mt-3 inline-flex w-fit items-center gap-2 text-sm text-fg-2 transition-colors hover:text-fg"
                                     >
                                         or book a call directly
                                         <ArrowIcon />
@@ -127,26 +127,26 @@ export default function ContactPage() {
 
                         <Reveal delay={0.1}>
                             <Card className="h-full p-8 sm:p-10">
-                                <h2 className="font-mono text-xs tracking-[0.22em] text-white/35 uppercase">
+                                <h2 className="font-mono text-xs tracking-[0.22em] text-fg-3 uppercase">
                                     Worth including
                                 </h2>
                                 <ul className="mt-6 space-y-4">
                                     {BRIEF_PROMPTS.map((prompt) => (
                                         <li
                                             key={prompt}
-                                            className="flex gap-3 text-sm leading-relaxed text-white/55"
+                                            className="flex gap-3 text-sm leading-relaxed text-fg-2"
                                         >
                                             <span
                                                 aria-hidden="true"
-                                                className="mt-[7px] size-1 shrink-0 rounded-full bg-signal-400/70"
+                                                className="mt-[7px] size-1 shrink-0 rounded-full bg-accent/70"
                                             />
                                             {prompt}
                                         </li>
                                     ))}
                                 </ul>
 
-                                <div className="mt-9 border-t border-white/[0.07] pt-7">
-                                    <h2 className="font-mono text-xs tracking-[0.22em] text-white/35 uppercase">
+                                <div className="mt-9 border-t border-line pt-7">
+                                    <h2 className="font-mono text-xs tracking-[0.22em] text-fg-3 uppercase">
                                         Elsewhere
                                     </h2>
                                     <ul className="mt-5 space-y-3">
@@ -155,7 +155,7 @@ export default function ContactPage() {
                                                 href={FOUNDER.personalSite}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-sm text-white/55 transition-colors hover:text-white"
+                                                className="text-sm text-fg-2 transition-colors hover:text-fg"
                                             >
                                                 sakshamkhurana.com
                                             </a>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                                                     href={social.href}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="text-sm text-white/55 transition-colors hover:text-white"
+                                                    className="text-sm text-fg-2 transition-colors hover:text-fg"
                                                 >
                                                     {social.name}
                                                 </a>
@@ -182,12 +182,12 @@ export default function ContactPage() {
 
             <section
                 aria-labelledby="engagements-heading"
-                className="border-y border-white/[0.07] bg-ink-900/30 py-20 sm:py-28"
+                className="border-y border-line bg-sunken py-20 sm:py-28"
             >
                 <Container>
                     <h2
                         id="engagements-heading"
-                        className="text-2xl font-medium tracking-tight text-white sm:text-3xl"
+                        className="text-2xl font-medium tracking-tight text-fg sm:text-3xl"
                     >
                         Shapes of engagement
                     </h2>
@@ -197,13 +197,13 @@ export default function ContactPage() {
                             <li key={item.title} className="h-full">
                                 <Reveal delay={i * 0.08} className="h-full">
                                     <Card className="h-full">
-                                        <p className="font-mono text-xs tracking-[0.18em] text-signal-400 uppercase">
+                                        <p className="font-mono text-xs tracking-[0.18em] text-accent uppercase">
                                             {item.duration}
                                         </p>
-                                        <h3 className="mt-4 text-lg font-medium tracking-tight text-white">
+                                        <h3 className="mt-4 text-lg font-medium tracking-tight text-fg">
                                             {item.title}
                                         </h3>
-                                        <p className="mt-3 text-sm leading-relaxed text-white/50">
+                                        <p className="mt-3 text-sm leading-relaxed text-fg-2">
                                             {item.body}
                                         </p>
                                     </Card>
@@ -218,7 +218,7 @@ export default function ContactPage() {
                 <Container>
                     <h2
                         id="faq-heading"
-                        className="text-2xl font-medium tracking-tight text-white sm:text-3xl"
+                        className="text-2xl font-medium tracking-tight text-fg sm:text-3xl"
                     >
                         Common questions
                     </h2>
@@ -227,10 +227,10 @@ export default function ContactPage() {
                         {FAQ.map((item, i) => (
                             <Reveal key={item.q} delay={(i % 2) * 0.08}>
                                 <div>
-                                    <dt className="text-base font-medium text-white">
+                                    <dt className="text-base font-medium text-fg">
                                         {item.q}
                                     </dt>
-                                    <dd className="mt-3 text-sm leading-relaxed text-white/50">
+                                    <dd className="mt-3 text-sm leading-relaxed text-fg-2">
                                         {item.a}
                                     </dd>
                                 </div>

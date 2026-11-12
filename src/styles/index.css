@@ -2,24 +2,37 @@
 
 /* ---------------------------------------------------------------------------
    Design tokens
-   The site is committed to a single dark treatment — the 3D hero and the
-   accent gradients are built around it — so there is no light-mode swap.
+
+   Cream ground, brown for type and structure, purple reserved for accents and
+   calls to action. Components use only the semantic roles below (bg-page,
+   text-fg-2, bg-accent, …), never a literal colour, so the palette can change
+   here without touching a component.
+
+   Measured contrast (WCAG): fg 14.3:1, fg-2 8.0:1, fg-3 5.3:1 and accent 8.6:1
+   on the page ground; fg-3 stays above 4.5:1 even on the sunken bands
+   (4.7:1). Text on the accent fill is 9.3:1.
 --------------------------------------------------------------------------- */
 
 @theme {
-    --color-ink-950: #060709;
-    --color-ink-900: #0a0c10;
-    --color-ink-800: #101319;
-    --color-ink-700: #171b23;
-    --color-ink-600: #222732;
+    /* Grounds, lightest to darkest. */
+    --color-surface: #fbf8f2; /* cards and raised panels */
+    --color-page: #f5efe4; /* the page itself */
+    --color-sunken: #ebe1cf; /* banded sections, footer */
 
-    --color-accent-400: #8b7cff;
-    --color-accent-500: #6d5cff;
-    --color-accent-600: #543fef;
+    /* Brown type, strongest to quietest. */
+    --color-fg: #2a1d15;
+    --color-fg-2: #5a4334;
+    --color-fg-3: #765d4c;
 
-    --color-signal-300: #7ff3e5;
-    --color-signal-400: #34d8c4;
-    --color-signal-500: #16b3a1;
+    /* Structure: brown at low alpha, so lines sit correctly on any ground. */
+    --color-line: rgb(42 29 21 / 0.12);
+    --color-line-strong: rgb(42 29 21 / 0.24);
+
+    /* Purple: accents and calls to action only. */
+    --color-accent: #5b2b87;
+    --color-accent-hover: #4a2170;
+    --color-accent-soft: #ece2f4;
+    --color-on-accent: #fbf8f2;
 
     /* Loaded from Google Fonts in index.html. The stacks below are the
        fallbacks the browser paints with until those arrive. */
@@ -38,12 +51,22 @@
 
 @layer base {
     :root {
-        color-scheme: dark;
-        --grid-line: rgba(255, 255, 255, 0.04);
+        color-scheme: light;
+        --grid-line: rgb(42 29 21 / 0.05);
+
+        /* Hairline line figures: brown line work, purple for what the
+           pointer lights. Each figure's container sets --hairline-plate to
+           the ground directly behind it, since plates are filled. */
+        --hairline-plate: var(--color-page);
+        --hairline-hi: var(--color-accent);
+        --hairline-edge: var(--color-fg-2);
+        --hairline-mid: #8a7260;
+        --hairline-lo: #d3c6b1;
+        --hairline-stroke: 1;
     }
 
     * {
-        border-color: var(--color-ink-600);
+        border-color: var(--color-line);
     }
 
     html {
@@ -54,8 +77,8 @@
     }
 
     body {
-        background-color: var(--color-ink-950);
-        color: #e9ecf2;
+        background-color: var(--color-page);
+        color: var(--color-fg);
         font-family: var(--font-sans);
         font-synthesis-weight: none;
         text-rendering: optimizeLegibility;
@@ -64,12 +87,12 @@
     }
 
     ::selection {
-        background-color: var(--color-accent-500);
-        color: #fff;
+        background-color: var(--color-accent);
+        color: var(--color-on-accent);
     }
 
     :focus-visible {
-        outline: 2px solid var(--color-signal-400);
+        outline: 2px solid var(--color-accent);
         outline-offset: 3px;
         border-radius: 2px;
     }
@@ -99,51 +122,26 @@
         background-size: 64px 64px;
     }
 
+    /* Drafting-paper grid for the hero's drawing field. */
+    .bg-grid-fine {
+        background-image:
+            linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+
     /**
-     * Renders any source SVG as flat white. The icon set is inherited and its
-     * fills are inconsistent — some black, some white, some brand-coloured, and
-     * web-zinc.svg is light grey — so a plain `invert` lightens some and
-     * darkens others. Crushing to black first makes the result independent of
-     * whatever the file happens to contain.
+     * Paints an SVG from public/icons in the current text colour. The inherited
+     * icon set has inconsistent fills (black, white, brand colours, grey), so
+     * the file is used only as a shape mask; colour always comes from the
+     * palette. Set the source with the `--icon` custom property.
      */
-    .icon-white {
-        filter: brightness(0) invert(1);
-    }
-
-    .text-gradient {
-        background-image: linear-gradient(
-            110deg,
-            #ffffff 10%,
-            #c9c6ff 45%,
-            var(--color-signal-300) 90%
-        );
-        background-clip: text;
-        color: transparent;
-    }
-
-    /* Hairline gradient border used on cards and the header. */
-    .hairline {
-        position: relative;
-    }
-
-    .hairline::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        padding: 1px;
-        background: linear-gradient(
-            140deg,
-            rgba(255, 255, 255, 0.14),
-            rgba(255, 255, 255, 0.02) 40%,
-            rgba(255, 255, 255, 0) 70%
-        );
-        -webkit-mask:
-            linear-gradient(#000 0 0) content-box,
-            linear-gradient(#000 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        pointer-events: none;
+    .icon {
+        display: inline-block;
+        flex: none;
+        background-color: currentColor;
+        -webkit-mask: var(--icon) center / contain no-repeat;
+        mask: var(--icon) center / contain no-repeat;
     }
 }
 

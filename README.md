@@ -17,7 +17,7 @@ be indexed.
 | Routing    | React Router 6                                              |
 | Styling    | Tailwind CSS v4 (tokens in `src/styles/index.css`)         |
 | Motion     | `motion` (Framer Motion) for scroll reveals                |
-| 3D         | `@react-three/fiber` + `three` for the hero scene          |
+| Drawings   | `@lucasmarkes/hairline` line figures (hero), MIT           |
 
 React Router is pinned to v6: `vite-react-ssg` imports `react-router-dom/server.js`
 during the prerender, and v7 removed that entry point.
@@ -46,7 +46,6 @@ src/
   components/         Seo, Header, Footer, Layout, cards, primitives
   sections/           Hero, Credibility, Services, Process, Work, About, CTA
   pages/              one component per route
-  three/              hero WebGL scene
   routes.tsx          route table (drives both router and prerender)
 scripts/
   generate-seo.mjs    writes sitemap.xml + robots.txt from the built output

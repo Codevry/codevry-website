@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { SITE } from "@/data/site";
 import { ROUTES } from "@/lib/seo";
 import { cn } from "@/lib/cn";
-import { ArrowIcon, Container } from "@/components/primitives";
+import { ArrowIcon, Container, MaskIcon } from "@/components/primitives";
 
 const NAV = ROUTES.filter((r) => r.path !== "/" && r.path !== "/contact");
 
@@ -35,7 +35,7 @@ export default function Header() {
             className={cn(
                 "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo",
                 scrolled || open
-                    ? "border-b border-white/[0.07] bg-ink-950/80 backdrop-blur-xl"
+                    ? "border-b border-line bg-page/85 backdrop-blur-xl"
                     : "border-b border-transparent",
             )}
         >
@@ -46,14 +46,8 @@ export default function Header() {
                         className="flex items-center gap-2.5"
                         aria-label={`${SITE.name} — home`}
                     >
-                        <img
-                            src="/icons/codevry-white.svg"
-                            alt=""
-                            width={28}
-                            height={28}
-                            className="size-7"
-                        />
-                        <span className="text-sm font-semibold tracking-[0.28em] text-white">
+                        <MaskIcon src="/icons/codevry.svg" className="size-7 text-fg" />
+                        <span className="text-sm font-semibold tracking-[0.28em] text-fg">
                             CODEVRY
                         </span>
                     </Link>
@@ -70,8 +64,8 @@ export default function Header() {
                                     cn(
                                         "rounded-xl px-4 py-2 text-sm transition-colors duration-300",
                                         isActive
-                                            ? "text-white"
-                                            : "text-white/55 hover:text-white",
+                                            ? "text-fg"
+                                            : "text-fg-2 hover:text-fg",
                                     )
                                 }
                             >
@@ -83,7 +77,7 @@ export default function Header() {
                     <div className="flex items-center gap-2">
                         <Link
                             to="/contact"
-                            className="group hidden items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-medium text-ink-950 transition duration-300 ease-out-expo hover:bg-signal-300 sm:inline-flex"
+                            className="group hidden items-center gap-2 rounded-xl bg-accent px-5 py-2.5 text-sm font-medium text-on-accent transition duration-300 ease-out-expo hover:bg-accent-hover sm:inline-flex"
                         >
                             Start a project
                             <ArrowIcon />
@@ -95,7 +89,7 @@ export default function Header() {
                             aria-expanded={open}
                             aria-controls="mobile-nav"
                             aria-label={open ? "Close menu" : "Open menu"}
-                            className="inline-flex size-10 items-center justify-center rounded-xl border border-white/15 text-white md:hidden"
+                            className="inline-flex size-10 items-center justify-center rounded-xl border border-line-strong text-fg md:hidden"
                         >
                             <svg
                                 viewBox="0 0 20 20"
@@ -128,7 +122,7 @@ export default function Header() {
                 <nav
                     id="mobile-nav"
                     aria-label="Mobile"
-                    className="border-t border-white/[0.07] md:hidden"
+                    className="border-t border-line md:hidden"
                 >
                     <Container className="flex flex-col gap-1 py-5">
                         {[...NAV, { path: "/contact", label: "Contact" }].map(
@@ -140,8 +134,8 @@ export default function Header() {
                                         cn(
                                             "rounded-xl px-4 py-3 text-base transition-colors",
                                             isActive
-                                                ? "bg-white/5 text-white"
-                                                : "text-white/60",
+                                                ? "bg-fg/5 text-fg"
+                                                : "text-fg-2",
                                         )
                                     }
                                 >

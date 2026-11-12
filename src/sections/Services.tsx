@@ -2,6 +2,7 @@ import { SERVICES } from "@/data/site";
 import {
     Card,
     Container,
+    MaskIcon,
     Reveal,
     SectionHeading,
 } from "@/components/primitives";
@@ -46,34 +47,27 @@ export default function Services({ limit, heading = true }: ServicesProps) {
                                 <Card className="flex h-full flex-col">
                                     <span
                                         aria-hidden="true"
-                                        className="inline-flex size-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]"
+                                        className="inline-flex size-11 items-center justify-center rounded-xl border border-line bg-fg/[0.04]"
                                     >
-                                        <img
-                                            src={service.icon}
-                                            alt=""
-                                            width={22}
-                                            height={22}
-                                            loading="lazy"
-                                            className="icon-white size-[22px] opacity-70"
-                                        />
+                                        <MaskIcon src={service.icon} className="size-[22px] text-fg-2" />
                                     </span>
 
-                                    <h3 className="mt-5 text-lg font-medium tracking-tight text-white">
+                                    <h3 className="mt-5 text-lg font-medium tracking-tight text-fg">
                                         {service.title}
                                     </h3>
-                                    <p className="mt-3 text-sm leading-relaxed text-white/50">
+                                    <p className="mt-3 text-sm leading-relaxed text-fg-2">
                                         {service.summary}
                                     </p>
 
-                                    <ul className="mt-6 space-y-2.5 border-t border-white/[0.07] pt-5">
+                                    <ul className="mt-6 space-y-2.5 border-t border-line pt-5">
                                         {service.deliverables.map((item) => (
                                             <li
                                                 key={item}
-                                                className="flex gap-2.5 text-sm text-white/45"
+                                                className="flex gap-2.5 text-sm text-fg-3"
                                             >
                                                 <span
                                                     aria-hidden="true"
-                                                    className="mt-[7px] size-1 shrink-0 rounded-full bg-signal-400/70"
+                                                    className="mt-[7px] size-1 shrink-0 rounded-full bg-accent/70"
                                                 />
                                                 {item}
                                             </li>

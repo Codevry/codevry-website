@@ -13,7 +13,7 @@ export default function PageHero({
     lede?: ReactNode;
 }) {
     return (
-        <section className="relative overflow-hidden border-b border-white/[0.07] pt-36 pb-20 sm:pt-44 sm:pb-24">
+        <section className="relative overflow-hidden border-b border-line pt-36 pb-20 sm:pt-44 sm:pb-24">
             {/* The grid lives on its own layer rather than on the section, and
                 fades in from the top. Painted on the section it starts at the
                 page origin, so a 64px line landed right at the edge of the
@@ -24,7 +24,7 @@ export default function PageHero({
             />
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 -top-40 h-[420px] bg-[radial-gradient(ellipse_at_top,rgba(109,92,255,0.18),transparent_60%)]"
+                className="pointer-events-none absolute inset-x-0 -top-40 h-[420px] bg-[radial-gradient(ellipse_at_top,color-mix(in_srgb,var(--color-accent)_12%,transparent),transparent_60%)]"
             />
 
             <Container className="relative">
@@ -35,11 +35,11 @@ export default function PageHero({
                     className="max-w-3xl"
                 >
                     <Eyebrow>{eyebrow}</Eyebrow>
-                    <h1 className="mt-5 text-[clamp(2.25rem,5.5vw,3.75rem)] leading-[1.06] font-medium tracking-tight text-balance text-white">
+                    <h1 className="mt-5 text-[clamp(2.25rem,5.5vw,3.75rem)] leading-[1.06] font-medium tracking-tight text-balance text-fg">
                         {title}
                     </h1>
                     {lede && (
-                        <p className="mt-6 max-w-2xl text-base leading-relaxed text-pretty text-white/55 sm:text-lg">
+                        <p className="mt-6 max-w-2xl text-base leading-relaxed text-pretty text-fg-2 sm:text-lg">
                             {lede}
                         </p>
                     )}
