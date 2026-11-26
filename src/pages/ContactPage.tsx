@@ -5,6 +5,7 @@ import {
     ArrowIcon,
     Card,
     Container,
+    MaskIcon,
     Reveal,
 } from "@/components/primitives";
 import { canonical } from "@/lib/seo";
@@ -87,7 +88,7 @@ export default function ContactPage() {
                 <Container>
                     <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
                         <Reveal>
-                            <Card className="flex h-full flex-col justify-between p-8 sm:p-10">
+                            <Card className="h-full p-8 sm:p-10">
                                 <div>
                                     <h2
                                         id="reach-heading"
@@ -105,7 +106,7 @@ export default function ContactPage() {
 
                                 <a
                                     href={`mailto:${FOUNDER.email}?subject=Project%20enquiry`}
-                                    className="group mt-10 inline-flex w-fit items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-medium text-on-accent transition duration-300 ease-out-expo hover:bg-accent-hover hover:shadow-[0_10px_24px_-12px] hover:shadow-accent/70"
+                                    className="group mt-8 inline-flex w-fit items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-medium text-on-accent transition duration-300 ease-out-expo hover:bg-accent-hover hover:shadow-[0_10px_24px_-12px] hover:shadow-accent/70"
                                 >
                                     {FOUNDER.email}
                                     <ArrowIcon />
@@ -150,25 +151,26 @@ export default function ContactPage() {
                                         Elsewhere
                                     </h2>
                                     <ul className="mt-5 space-y-3">
-                                        <li>
-                                            <a
-                                                href={FOUNDER.personalSite}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-sm text-fg-2 transition-colors hover:text-fg"
-                                            >
-                                                sakshamkhurana.com
-                                            </a>
-                                        </li>
-                                        {SOCIALS.map((social) => (
-                                            <li key={social.href}>
+                                        {[
+                                            {
+                                                name: "sakshamkhurana.com",
+                                                href: FOUNDER.personalSite,
+                                                icon: "/icons/web-zinc.svg",
+                                            },
+                                            ...SOCIALS,
+                                        ].map((link) => (
+                                            <li key={link.href}>
                                                 <a
-                                                    href={social.href}
+                                                    href={link.href}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="text-sm text-fg-2 transition-colors hover:text-fg"
+                                                    className="inline-flex items-center gap-3 text-sm text-fg-2 transition-colors hover:text-fg"
                                                 >
-                                                    {social.name}
+                                                    <MaskIcon
+                                                        src={link.icon}
+                                                        className="size-[18px]"
+                                                    />
+                                                    {link.name}
                                                 </a>
                                             </li>
                                         ))}

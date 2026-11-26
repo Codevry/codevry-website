@@ -41,11 +41,11 @@ export const FOUNDER = {
     bookingUrl: "",
 } as const;
 
+/** Profiles elsewhere. `icon` is a file in public/icons, painted as a mask. */
 export const SOCIALS = [
-    { name: "GitHub", href: "https://github.com/dawnimpulse", icon: "github" },
-    { name: "Codevry on GitHub", href: "https://github.com/Codevry", icon: "github" },
-    { name: "Instagram", href: "https://www.instagram.com/00saksham/", icon: "instagram" },
-    { name: "Strava", href: "https://www.strava.com/athletes/116418175", icon: "strava" },
+    { name: "GitHub", href: "https://github.com/dawnimpulse", icon: "/icons/github.svg" },
+    { name: "Codevry on GitHub", href: "https://github.com/Codevry", icon: "/icons/codevry.svg" },
+    { name: "Instagram", href: "https://www.instagram.com/00saksham/", icon: "/icons/instagram.svg" },
 ] as const;
 
 export type Client = {
