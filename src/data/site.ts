@@ -50,22 +50,29 @@ export const SOCIALS = [
 
 export type Client = {
     name: string;
-    /** Rendered with more weight than the rest of the roster. */
+    /** Shown slightly larger than the rest of the roster. */
     primary?: boolean;
+    /**
+     * Path to the client's logo under public/logos (e.g. "/logos/capgemini.svg").
+     * Use an SVG or PNG on a transparent background: only its shape is used,
+     * and it is painted in a single tone from the palette, so the file's own
+     * colours do not matter. Without a logo the name is set as a wordmark.
+     */
+    logo?: string;
 };
 
 /**
- * Companies and clients delivered for. Rendered as wordmarks rather than logo
- * files — using a company's mark implies an endorsement they have not given.
+ * Companies and clients delivered for, shown in the "Trusted by teams at"
+ * strip as monochrome logos (or wordmarks where no logo file exists yet).
  */
 export const CLIENTS: Client[] = [
-    { name: "Angeles Academy", primary: true },
-    { name: "Capgemini" },
-    { name: "Noumena" },
-    { name: "Visualoud" },
-    { name: "MyDataLabs" },
-    { name: "TNine" },
-    { name: "Wayne" },
+    { name: "Angeles Academy", primary: true, logo: "/logos/angeles-academy.svg" },
+    { name: "Capgemini", logo: "/logos/capgemini.svg" },
+    { name: "Noumena", logo: "/logos/noumena.svg" },
+    { name: "Visualoud", logo: "/logos/visualoud.svg" },
+    { name: "MyDataLabs", logo: "/logos/mydatalabs.svg" },
+    { name: "TNine", logo: "/logos/tnine.svg" },
+    { name: "Wayne", logo: "/logos/wayne.svg" },
 ];
 
 export type Service = {
