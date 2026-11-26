@@ -35,10 +35,7 @@ export default function Credibility() {
                                 // The duplicate pass exists only to make the
                                 // loop seamless; it is not extra content.
                                 aria-hidden={i >= CLIENTS.length}
-                                className={cn(
-                                    "flex items-center whitespace-nowrap",
-                                    client.primary ? "text-fg" : "text-fg-3",
-                                )}
+                                className="text-fg-3 flex items-center whitespace-nowrap"
                             >
                                 <ClientMark client={client} size="sm" />
                             </span>
@@ -50,12 +47,7 @@ export default function Credibility() {
                     {CLIENTS.map((client) => (
                         <li
                             key={client.name}
-                            className={cn(
-                                "flex items-center transition-colors duration-500",
-                                client.primary
-                                    ? "text-fg"
-                                    : "text-fg-3 hover:text-fg",
-                            )}
+                            className="text-fg-3 hover:text-fg flex items-center transition-colors duration-500"
                         >
                             <ClientMark client={client} size="lg" />
                         </li>

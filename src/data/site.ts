@@ -50,7 +50,7 @@ export const SOCIALS = [
 
 export type Client = {
     name: string;
-    /** Rendered with more weight than the rest of the roster. */
+    /** Shown slightly larger than the rest of the roster. */
     primary?: boolean;
     /**
      * Path to the client's logo under public/logos (e.g. "/logos/capgemini.svg").
@@ -66,7 +66,7 @@ export type Client = {
  * strip as monochrome logos (or wordmarks where no logo file exists yet).
  */
 export const CLIENTS: Client[] = [
-    { name: "Angeles Academy", primary: true },
+    { name: "Angeles Academy", primary: true, logo: "/logos/angeles-academy.svg" },
     { name: "Capgemini", logo: "/logos/capgemini.svg" },
     { name: "Noumena", logo: "/logos/noumena.svg" },
     { name: "Visualoud", logo: "/logos/visualoud.svg" },
