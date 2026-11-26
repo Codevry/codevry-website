@@ -67,12 +67,12 @@ export type Client = {
  */
 export const CLIENTS: Client[] = [
     { name: "Angeles Academy", primary: true },
-    { name: "Capgemini" },
-    { name: "Noumena" },
-    { name: "Visualoud" },
-    { name: "MyDataLabs" },
-    { name: "TNine" },
-    { name: "Wayne" },
+    { name: "Capgemini", logo: "/logos/capgemini.svg" },
+    { name: "Noumena", logo: "/logos/noumena.svg" },
+    { name: "Visualoud", logo: "/logos/visualoud.svg" },
+    { name: "MyDataLabs", logo: "/logos/mydatalabs.svg" },
+    { name: "TNine", logo: "/logos/tnine.svg" },
+    { name: "Wayne", logo: "/logos/wayne.svg" },
 ];
 
 export type Service = {
