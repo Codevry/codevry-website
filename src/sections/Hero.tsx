@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { settle } from "@lucasmarkes/hairline";
-import { FOUNDER, SITE } from "@/data/site";
+import { FLAGSHIP, FOUNDER, SITE } from "@/data/site";
 import { ArrowIcon, Container } from "@/components/primitives";
 import HairlineFigure from "@/components/HairlineFigure";
 import { cn } from "@/lib/cn";
@@ -115,6 +115,33 @@ export default function Hero() {
                     {/* Title block. */}
                     <div className="grid grid-cols-2 border-t border-line-strong bg-page lg:grid-cols-4">
                         <div className="col-span-2 border-b border-line-strong px-5 py-6 sm:px-7 sm:py-8 lg:col-span-3 lg:border-r">
+                            {/* Points at the flagship showcase further down. */}
+                            <a
+                                href="#aira"
+                                className="group mb-5 inline-flex max-w-full items-center gap-2.5 rounded-full border border-line-strong bg-surface py-1 pr-3.5 pl-1 text-[13px] text-fg-2 transition duration-300 ease-out-expo hover:border-accent/50 hover:text-fg"
+                            >
+                                <span className="inline-flex items-center gap-1.5 rounded-full bg-ink py-1 pr-2.5 pl-1.5 font-mono text-[10px] tracking-[0.16em] text-ink-fg uppercase">
+                                    <img
+                                        src={FLAGSHIP.appIcon}
+                                        width={16}
+                                        height={16}
+                                        alt=""
+                                        className="-m-0.5 size-4"
+                                    />
+                                    New
+                                </span>
+                                <span className="truncate">
+                                    <span className="font-medium text-fg">
+                                        {FLAGSHIP.name}
+                                    </span>
+                                    <span className="hidden sm:inline">
+                                        {" "}
+                                        — every project, running at once
+                                    </span>
+                                </span>
+                                <ArrowIcon className="size-3.5 shrink-0" />
+                            </a>
+
                             <h1 className="text-[clamp(1.9rem,4.2vw,3.4rem)] leading-[1.05] font-medium tracking-tight text-balance text-fg">
                                 <span className="text-accent">
                                     Systems, sites and apps

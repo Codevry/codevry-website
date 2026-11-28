@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
+import Flagship from "@/sections/Flagship";
 import Work from "@/sections/Work";
 import ContactCta from "@/sections/ContactCta";
 import { PROJECTS, SITE } from "@/data/site";
@@ -20,6 +21,7 @@ const workSchema = [
                 name: project.title,
                 description: project.description,
                 applicationCategory: project.category,
+                ...(project.featured && { operatingSystem: "macOS" }),
                 url: project.website ?? project.github,
                 codeRepository: project.github,
                 author: { "@id": `${SITE.url}/#founder` },
@@ -44,6 +46,7 @@ export default function WorkPage() {
                 lede="Client engagements are mostly under NDA. The Codevry suite is not — every project below is a real product with a readable codebase, so you can judge the engineering before you commit to it."
             />
 
+            <Flagship />
             <Work />
             <ContactCta />
         </>

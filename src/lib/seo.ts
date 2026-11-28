@@ -54,7 +54,7 @@ export const ROUTES: RouteMeta[] = [
         label: "Work",
         title: `Work — Shipped Apps, Services & Open-Source Tools | ${SITE.name}`,
         description:
-            "Wlpapr, Scroll, Foundation, Pixels, Horm and more: shipped apps, backend services and developer tools, all open source so you can read the code first.",
+            "Aira, a Mac editor for running many projects at once, plus Wlpapr, Scroll, Foundation and more: shipped and open source, so you can read the code first.",
         image: "work",
         imageAlt: "Codevry work: Shipped, public, and open to inspection.",
         priority: 0.9,

@@ -79,6 +79,11 @@ Two fields worth knowing:
 
 - `FOUNDER.bookingUrl` — set it to a Cal.com/Calendly URL and the "Book a call"
   buttons appear on the home CTA and contact page. Empty means hidden.
+- `FLAGSHIP` — the lead product (Aira), shown as the dark showcase on the
+  home and work pages and in the hero's "New" pill. Its screenshots live in
+  `public/images/apps/aira/`. The matching `PROJECTS` entry has
+  `featured: true`, which keeps it out of the card grid but in the structured
+  data.
 - `SITE.url` — used for canonical URLs, Open Graph and structured data. The
   sitemap generator also reads `SITE_URL` from the environment if you need to
   override it for a preview deploy.

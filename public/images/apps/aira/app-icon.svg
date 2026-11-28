@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f1f25"/>
+      <stop offset="1" stop-color="#0b0b0c"/>
+    </linearGradient>
+    <linearGradient id="dots" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8cbcff"/>
+      <stop offset="1" stop-color="#4c8dff"/>
+    </linearGradient>
+  </defs>
+  <!-- macOS icon grid: 824×824 body, 100px margin -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+  <rect x="101" y="101" width="822" height="822" rx="184" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+  <g fill="none" stroke="#ececf1" stroke-width="54" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M404 300 C346 300 334 322 334 372 L334 452 C334 490 316 512 276 512 C316 512 334 534 334 572 L334 652 C334 702 346 724 404 724"/>
+    <path d="M620 300 C678 300 690 322 690 372 L690 452 C690 490 708 512 748 512 C708 512 690 534 690 572 L690 652 C690 702 678 724 620 724"/>
+  </g>
+  <g fill="url(#dots)">
+    <circle cx="512" cy="404" r="36"/>
+    <circle cx="512" cy="512" r="36"/>
+    <circle cx="512" cy="620" r="36"/>
+  </g>
+</svg>
