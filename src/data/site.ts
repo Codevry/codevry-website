@@ -197,6 +197,11 @@ export type Project = {
     icon: string;
     github: string;
     website?: string;
+    /**
+     * The studio's lead product. It is shown in its own showcase (see
+     * `FLAGSHIP`) rather than as a card in the grid.
+     */
+    featured?: boolean;
     tags: string[];
     screenshots?: string[];
     /**
@@ -212,6 +217,17 @@ export type Project = {
  * every entry is a real, shipped, readable codebase.
  */
 export const PROJECTS: Project[] = [
+    {
+        title: "Aira",
+        category: "Applications",
+        featured: true,
+        description:
+            "A Mac code editor for people who keep many projects open at once: dev servers, coding agents and git for every project, side by side in one window.",
+        icon: "/icons/aira.svg",
+        github: "https://github.com/DawnImpulse/aira",
+        website: "https://aira.codevry.com",
+        tags: ["Tauri", "React", "TypeScript", "macOS"],
+    },
     {
         title: "Wlpapr",
         category: "Applications",
@@ -299,6 +315,59 @@ export const PROJECTS: Project[] = [
         tags: ["TypeScript", "Docker"],
     },
 ];
+
+/**
+ * The flagship product, shown as a showcase on the home and work pages.
+ * Copy follows aira.codevry.com; keep `version` in step with its releases.
+ */
+export const FLAGSHIP = {
+    name: "Aira",
+    pronunciation: "aye-ra",
+    headline: "All your projects, running at once.",
+    summary:
+        "A Mac code editor for people who keep many projects open at once. Dev servers, coding agents and git for every project, side by side in one window — so nothing you started has to stop when you switch.",
+    website: "https://aira.codevry.com",
+    download: "https://github.com/DawnImpulse/aira/releases/latest",
+    github: "https://github.com/DawnImpulse/aira",
+    appIcon: "/images/apps/aira/app-icon.svg",
+    screenshot: {
+        src: "/images/apps/aira/agents.webp",
+        width: 1440,
+        height: 900,
+        alt: "Aira with three projects open: a storefront where Claude Code needs input with its subagents nested underneath, a checkout branch where Gemini CLI is done, and pricing.ts open in the editor.",
+    },
+    detail: {
+        src: "/images/apps/aira/device-view.webp",
+        width: 1200,
+        height: 694,
+        alt: "Aira's device view: one dev server laid out on an iPhone, an iPad and a laptop at their real widths.",
+    },
+    highlights: [
+        {
+            title: "Agents",
+            body: "Claude Code, Codex, Gemini CLI and more — working, needs input or done, per space.",
+        },
+        {
+            title: "Scripts",
+            body: "Pinned dev servers, started together with one click, one tab each.",
+        },
+        {
+            title: "Git",
+            body: "One changes tree across nested repos and worktrees, commit by commit.",
+        },
+        {
+            title: "Device view",
+            body: "Your dev server on a phone, tablet and laptop at once, scrolling together.",
+        },
+    ],
+    specs: [
+        { label: "Platform", value: "macOS" },
+        { label: "License", value: "MIT, open source" },
+        { label: "Version", value: "Preview v0.5.2" },
+        { label: "Price", value: "Free" },
+    ],
+    stack: ["Tauri", "React", "Monaco", "xterm.js"],
+} as const;
 
 export const PROJECT_CATEGORIES: ProjectCategory[] = [
     "Applications",

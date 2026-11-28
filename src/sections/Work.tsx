@@ -25,11 +25,13 @@ type WorkProps = {
 export default function Work({ preview = false }: WorkProps) {
     const [filter, setFilter] = useState<Filter>("All");
 
+    // The featured product has its own showcase above, so the grid is the rest.
+    const grid = PROJECTS.filter((p) => !p.featured);
     const visible = preview
-        ? PROJECTS.slice(0, 3)
+        ? grid.slice(0, 3)
         : filter === "All"
-          ? PROJECTS
-          : PROJECTS.filter((p) => p.category === filter);
+          ? grid
+          : grid.filter((p) => p.category === filter);
 
     return (
         <section
